@@ -1,0 +1,87 @@
+.freeservices-container{
+
+    padding: 50px 50px;
+    overflow-x: hidden;
+    /* border: 1px solid; */
+    }
+    .freeservices-container .freeservices-slider{
+
+    }
+    .freeservices-container .freeservices-slider .slick-slide{
+  
+    }
+
+    .freeservices-container .freeservices-slider .freeservices-slide{
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        /* font-size: 20px; */
+        gap: 15px;
+    font-family: Albert Sans, sans-serif;
+
+        /* width: 200px; 
+        height: 300px; */
+    
+    }
+    .freeservices-container .freeservices-slider .freeservices-slide .icon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 28px;
+        border: 1px solid #F0F0F0;
+        border-radius: 50%;
+        padding: 20px;
+    }
+    .freeservices-container .freeservices-slider .freeservices-slide .text h6{
+font-weight: 400;
+font-size: 16px;
+margin-bottom: 10px;
+font-family: Albert Sans, sans-serif;
+
+    }
+    .freeservices-container .freeservices-slider .freeservices-slide .text p{
+        font-size: 14px;
+    font-family: Albert Sans, sans-serif;
+
+    }
+
+    @media (max-width:1200px){
+        .freeservices-container .freeservices-slider .freeservices-slide .icon{
+           font-size: 28px;
+        }
+        .freeservices-container .freeservices-slider .freeservices-slide .text h6{
+            font-size: 15px;
+                }
+                .freeservices-container .freeservices-slider .freeservices-slide .text p{
+                    font-size: 12px;
+                }
+                .freeservices-container .freeservices-slider .freeservices-slide{
+                
+                    /* gap: 25px; */
+                           
+                }
+    }
+
+    @media (max-width:900px){
+
+        .freeservices-container .freeservices-slider .freeservices-slide .icon{
+            font-size: 25px;
+            padding: 15px;
+         }
+         .freeservices-container .freeservices-slider .freeservices-slide .text h6{
+             font-size: 15px;
+                 }
+                 .freeservices-container .freeservices-slider .freeservices-slide .text p{
+                     font-size: 12px;
+                 }
+                 .freeservices-container .freeservices-slider .freeservices-slide{
+                 
+                     /* gap: 10px; */
+                            
+                 }
+    }
+
+
+
+    
+    

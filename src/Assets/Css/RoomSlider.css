@@ -1,0 +1,22 @@
+
+
+
+.room-container{
+overflow-x: hidden;
+
+
+
+
+}
+
+
+.room-container .room-slider img {
+    width: calc(100% - 30px) !important; 
+    height: 100%;
+    object-fit: cover ;
+}
+
+.room-container .slick-slide {
+    display: flex;
+    justify-content: center;
+}

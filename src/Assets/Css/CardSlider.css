@@ -1,0 +1,88 @@
+
+.card-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 0;
+    padding-left:50px;
+    background: #F8F6F2;
+    margin-top: 50px;
+    overflow-x: hidden;
+}
+ .card-container span{
+    margin-left: 10px;
+    font-size: 50px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    color: black;
+    line-height: 50.4px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-rendering: optimizeLegibility;
+    font-weight: normal;
+}
+.card-container .slider-container .card{
+  position:relative;
+  width: calc(100% - 30px) !important; 
+
+  height:320px;
+box-shadow:none !important;
+object-fit:cover;
+cursor:pointer;
+border-radius: 0 !important;
+}
+
+@media (max-width:900px){
+ .card-container .slider-container .card{
+      height: 250px;
+  }
+}
+.card-container .slider-container  .card .card-img{
+  height: 100%;
+  width: 100%;
+transition: all 1s ease;
+object-fit: cover;
+
+
+}
+.card-container .slider-container .card:hover .card-img{
+  scale: 1.1;
+}
+.card-container .slider-container .card .card-action .btn{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  z-index: 10;
+  bottom:10px;
+  background: white;
+  color:black;
+  border-radius: 2px;
+  box-shadow: none;
+  padding: 10px 20px;
+  text-transform:unset;
+  font-family: Albert Sans, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+transition: all 0.6s ease;
+
+
+}
+.card-container .slider-container .card .card-action .btn .arrow-up{
+  margin-left: 10px;
+  font-size: 0;
+  color: white;
+transition: all 0.3s ease;
+
+
+
+}
+.card-container .slider-container .card .card-action .btn:hover{
+ background: #000; 
+ color: white;
+}
+.card-container .slider-container .card .card-action .btn:hover .arrow-up{
+  display: block;
+  font-size: 16px;
+}
+
+
