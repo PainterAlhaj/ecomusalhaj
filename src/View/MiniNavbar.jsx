@@ -19,79 +19,73 @@ const blogmenu=[
 
 ]
 
-    const minimenuitems = [
-        {
-          id: 1,
-          title: "New Demo",
-          icon: (
-            <KeyboardArrowRightOutlinedIcon
-              sx={{
-                fontSize: "20px",
-              }}
-            />
-          ),
-        },
-        {
-          id: 2,
-          title: "Clothing",
-          icon: (
-            <KeyboardArrowRightOutlinedIcon
-              sx={{
-                fontSize: "20px",
-              }}
-            />
-          ),
-        },
-        {
-          id: 3,
-          title: "Basics",
-          icon: (
-            <KeyboardArrowRightOutlinedIcon
-              sx={{
-                fontSize: "20px",
-              }}
-            />
-          ),
-        },
-        {
-          id: "4",
-          title: "Beauty",
-        },
-    
-        {
-          id: "5",
-    
-          title: "Electronic",
-          icon: (
-            <KeyboardArrowRightOutlinedIcon
-              sx={{
-                fontSize: "20px",
-              }}
-            />
-          ),
-        },
-        {
-          id: "6",
-    
-          title: "Furniture",
-        },
-        {
-          id: "7",
-    
-          title: "Vegetables",
-        },
-    
-        {
-          id: "8",
-    
-          title: "Watch",
-        },
-        {
-          id: "9",
-    
-          title: "Lights",
-        },
-      ];
+const minimenuitems = [
+  {
+    id: 1,
+    title: "About Us",
+    icon: (
+      <KeyboardArrowRightOutlinedIcon
+        sx={{
+          fontSize: "20px",
+        }}
+      />
+    ),
+  },
+  {
+    id: 2,
+    title: "Brands",
+    icon: (
+      <KeyboardArrowRightOutlinedIcon
+        sx={{
+          fontSize: "20px",
+        }}
+      />
+    ),
+  },
+  {
+    id: 3,
+    title: "Contact",
+    icon: (
+      <KeyboardArrowRightOutlinedIcon
+        sx={{
+          fontSize: "20px",
+        }}
+      />
+    ),
+  },
+  {
+    id: "4",
+    title: "FAQ",
+  },
+  {
+    id: "5",
+    title: "Store",
+    icon: (
+      <KeyboardArrowRightOutlinedIcon
+        sx={{
+          fontSize: "20px",
+        }}
+      />
+    ),
+  },
+  {
+    id: "6",
+    title: "Timeline",
+  },
+  {
+    id: "7",
+    title: "View Cart",
+  },
+  {
+    id: "8",
+    title: "Checkout",
+  },
+  {
+    id: "9",
+    title: "Payment",
+  },
+];
+
     
       const secondminiitems = [
         { id: 1, title: "Tools" },
@@ -128,12 +122,12 @@ const blogmenu=[
    <>
 
 
-<Box sx={{display:'flex',justifyContent:'center',alignItems:'center',gap:'40px',
+<Box className='mininavbar-container' sx={{display:'flex',justifyContent:'center',alignItems:'center',gap:'40px',
     paddingY:'20px'
 }}>
 
 <ul className='list-container'>
-    <li className='list'><a href="#">Home
+    <li className='list'><a href="#" className='active'>Home
    
         <KeyboardArrowDownOutlinedIcon/>
         </a></li>
@@ -211,13 +205,19 @@ const blogmenu=[
                   </List>
                 </Box> */}
 
-{/* <Box
+
+
+
+
+
+
+<Box
                   className="menubox"
                   sx={{
                     position: "absolute",
-                    top: "0",
-                    paddingTop: "40px",
-                    width: "200px",
+                    top: "25px",
+                    // paddingTop: "40px",
+                    // width: "200px",
                     display: "none",
                     zIndex: "10",
                     // border:'1px solid'
@@ -227,16 +227,20 @@ const blogmenu=[
                     className="menulist"
                     sx={{
                       position: "relative",
-                      top: "0px",
-                      paddingTop: "40px",
-                      //   border:'2px solid black',
+                      top: "15px",
+                        // border:'2px solid black',
                       display: "flex",
                       flexDirection: "column",
                       justifyContent: "space-between",
                       alignItems: "center",
                       padding: "10px 20px",
+                      paddingTop: "20px",
+
                       bgcolor: "white",
                       width: "100%",
+                    width: "200px",
+                    cursor:'default',
+
                       transition: "all 0.3s ease",
                     }}
                   >
@@ -245,7 +249,11 @@ const blogmenu=[
                         key={index}
                         sx={{
                           paddingX: "0",
+                          py:'0px',
+                          cursor:'pointer',
 
+// border:'1px solid black',
+mb:'3px',
                           "&:hover .secondmenubox": {
                             display: "flex",
                           },
@@ -253,23 +261,19 @@ const blogmenu=[
                       >
                         <ListItemText
                           primary={item.title}
-                          sx={{
-                            fontSize: "10px",
-                            fontWeight: "bold",
-                            "&::after": {
-                              position: "absolute",
-                              content: "''",
-                              bottom: 0,
-                              left: 0,
-                              width: "0",
-                              height: "2px",
-                              bgcolor: "#5FCBC4",
+                          primaryTypographyProps={{
+                            fontSize: "15px",
+                            transition:'all 0.3s ease',
+                           
+                            // fontWeight: "bold",
+                          }}
 
-                              transition: "width 0.3s ease",
+                          sx={{
+                            '&:hover':{
+                              color:'#814037'
                             },
-                            "&:hover::after": {
-                              width: "50%",
-                            },
+                          
+                           
                           }}
                         />
                         {item.icon}
@@ -524,7 +528,7 @@ const blogmenu=[
                       </ListItem>
                     ))}
                   </List>
-                </Box> */}
+                </Box>
 
 
 
@@ -536,18 +540,19 @@ const blogmenu=[
                   className="menubox"
                   sx={{
                     position: "absolute",
-                    top: "0",
-                    paddingTop: "40px",
+                    top: "25px",
+                    // paddingTop: "40px",
                     width: "250px",
                     display: "none",
                     zIndex: "10",
+                    // border:'1px solid'
                   }}
                 >
                   <Box
                     className="menulist"
                     sx={{
                       position: "relative",
-                      top: "0px",
+                      top: "15px",
                       paddingTop: "40px",
                       //   border:'2px solid black',
                       display: "flex",
@@ -573,12 +578,12 @@ const blogmenu=[
                         <Typography
                           primary={item.title}
                           sx={{
-                            // fontSize: "10px",
+                            fontSize: "15px",
                             // fontWeight: "bold",
                             cursor:'pointer',
                             transition:'all 0.3s ease',
                             '&:hover':{
-                              color:'#955E56'
+                              color:'#814037'
                             },
                             
                            

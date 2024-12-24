@@ -16,6 +16,7 @@ const Gallery = () => {
         speed: 500,
         slidesToShow: 5,
         slidesToScroll: 1,
+        arrows:false,
         responsive: [
             {
               breakpoint: 768,
@@ -37,6 +38,11 @@ const Gallery = () => {
   return (
     <>
     <div className="gallery-container">
+    <div className="gallery-title">
+      <span>Shop  Gram</span>
+      <p>Here’s some of our most popular products people are in love with.</p>
+
+      </div>
         <div className="gallery-slider">
             <Slider {...settings}>
             <div className="gallery-slide">

@@ -1,0 +1,34 @@
+
+
+.appbar .toolbar .left .left-menuicon{
+    display: none;
+    color: black;
+    font-size: 25px;
+}
+.appbar .toolbar .middle img{
+    /* width: 110px ;
+    max-width: 100%;
+    height: auto;
+    transform: scale(1);
+    vertical-align: middle; */
+}
+
+
+@media (max-width:1149px) {
+    .appbar .toolbar .left .dropdown{
+        display: none;
+    }
+.appbar .toolbar .left .left-menuicon{
+
+
+display: block;
+}
+    .appbar .toolbar .left .icon{
+        display: block;
+    }
+}
+@media (max-width:767px) {
+    .appbar .toolbar .right .two,.appbar .toolbar .right .three{
+        display: none;
+    }
+}

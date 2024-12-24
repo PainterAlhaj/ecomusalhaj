@@ -1,6 +1,6 @@
 import { Box, Button, Card, CardActions, CardContent, CardMedia } from '@mui/material';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Slider from 'react-slick';
 import product1 from '../Assets/img/image/product1.jpg';
 import product2 from '../Assets/img/image/product2.jpg';
@@ -21,7 +21,40 @@ import "slick-carousel/slick/slick-theme.css";
 import '../Assets/Css/ProductSlider.css';
 // import '../Assets/Css/CardDesign.css'
 
+
+// Custom arrow components
+const NextArrow = ({ onClick, isDisabled }) => (
+  <div
+    className={`slick-next custom-arrow ${isDisabled ? 'disabled' : ''}`}
+    onClick={!isDisabled ? onClick : undefined}
+  >
+    <GrFormNext/>
+  </div>
+);
+
+const PrevArrow = ({ onClick, isDisabled }) => (
+  <div
+    className={`slick-prev custom-arrow ${isDisabled ? 'disabled' : ''}`}
+    onClick={!isDisabled ? onClick : undefined}
+  >
+    <GrFormPrevious/>
+  </div>
+);
+
 const ProductSlider = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  
+    // After the slide changes, update the currentSlide
+    const handleAfterChange = (index) => {
+      setCurrentSlide(index);
+    };
+  
+    // Debugging currentSlide value
+    React.useEffect(() => {
+      console.log('Current Slide:', currentSlide); 
+    }, [currentSlide]);
+  
   const allCards = [
     { id: 1, img: product1, caption:'AJ Wall Sconce',price:'$982.00'},
     { id: 2, img: product2, caption:'Brasilia Long Chair',price:'$982.00' },
@@ -33,16 +66,9 @@ const ProductSlider = () => {
     { id: 4, img: product8, caption:'Lina Swivel Chair',price:'$3600.00' },
 
   ];
+  const totalSlides = 4; 
 
-  // const CustomNextArrow = ({ onClick }) => (
-  //   <GrFormNext onClick={onClick} 
-  //   className='next-icon' />
-  // );
-  
-  // const CustomPrevArrow = ({ onClick }) => (
-  //   <GrFormPrevious onClick={onClick} 
-  //   className='prev-icon'/>
-  // );
+
 
   const settings = {
     dots: false,
@@ -50,8 +76,15 @@ const ProductSlider = () => {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
-  //   nextArrow: <CustomNextArrow />,
-  // prevArrow: <CustomPrevArrow />,
+    arrows: true,
+    nextArrow: (
+      <NextArrow isDisabled={currentSlide===totalSlides} />
+    ),
+    prevArrow: (
+      <PrevArrow isDisabled={currentSlide === 0} />
+    ),
+    afterChange: handleAfterChange,
+
     
     responsive: [
       {
@@ -75,7 +108,13 @@ const ProductSlider = () => {
   return (
     <>
       <Box className="product-container">
+        
         <Box className="product-slider">
+        <div className="product-title">
+      <span>Trending Now</span>
+      <Button variant='text' className='btn'>View All</Button>
+
+      </div>
           <Slider {...settings}>
             {allCards.map((card) => (
               <Card className="card" key={card.id}>

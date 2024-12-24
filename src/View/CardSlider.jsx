@@ -23,12 +23,13 @@ const CardSlider = () => {
   ];
 
   const settings = {
-    dots: false,
+    dots: true,
     infinite: false,
     speed: 500,
     slidesToShow: 4.4,
     slidesToScroll: 1,
-    
+    draggable: true,
+    arrows:false,
     responsive: [
       {
         breakpoint: 770,

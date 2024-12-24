@@ -36,13 +36,15 @@ const App = () => {
 
 <Gallery/>
 
-<Footer/>   
+{/* <Footer/>    */}
 
    </>
   )
 }
 
+
 export default App
+
 
 
 

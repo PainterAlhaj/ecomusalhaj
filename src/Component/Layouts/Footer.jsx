@@ -32,7 +32,6 @@ const Footer = () => {
       padding:'40px 20px',
       
 
-      // marginBottom:'50px',
     }))
 
     const Footerbox3=styled(Box)(()=>({
@@ -46,20 +45,12 @@ const Footer = () => {
 
     
 <Footerbox1 className='footerbox1'
-//     sx={{
-//       display:{sm:'block',md:'flex'},
-//       '@media (max-width:990px)':{
-//   display:'block'
-// },
-// '@media (max-width:760px)':{
-//   display:'none'
-// }
-//     }}
+
    >
        
-       
-       
-        <Box 
+       <div className="main-footer">
+       <div className='footer-left'>
+       <Box  className='ecomus'
         sx={{
       display:{xs:'none',sm:'flex'},
           
@@ -67,7 +58,6 @@ const Footer = () => {
           // justifyContent:'center',
           alignItems:'flex-start',
           // border:'2px solid black',
-          padding:'0 20px',
             flex:'1',
            
             height:{sm:'150px',md:'300px'},
@@ -241,7 +231,7 @@ style={{
 </div>
 
         </Box>
-        <Box
+        <Box className='help'
 sx={{
   display:{xs:'none',sm:'flex'},
           
@@ -270,7 +260,9 @@ sx={{
 
 
 </Box>
-<Box
+       </div>
+   <div className="footer-right">
+   <Box
 sx={{
   display:{xs:'none',sm:'flex'},
           
@@ -299,8 +291,7 @@ sx={{
           
   flexDirection:'column',
   justifyContent:'flex-start',
-  // alignItems:'center',
-  // border:'2px solid black',
+
 
     flex:'1',
     height:{sm:'150px',md:'300px'},
@@ -319,7 +310,9 @@ sx={{
     }}/></Button>
   </Box>
 </Box>
+    </div>   
 
+</div>
     </Footerbox1>
 
    

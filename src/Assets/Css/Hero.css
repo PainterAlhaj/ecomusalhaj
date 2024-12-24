@@ -10,9 +10,10 @@
 
 .hero-section .main{
     display:flex;
-    height: 515px;
-    /* width: 100%; */
+    height: 100vh;
 }
+
+
 
 .hero-section .slider-box{
     
@@ -107,3 +108,71 @@ height: 100%;
     
 }
 
+@media (max-width:768px) {
+    .hero-section .main{
+        flex-direction: column;
+    }
+    .hero-section .main .left{
+        padding: 60px 0;
+
+    }
+    .hero-section .main .left .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+        width: 100%;
+        margin-left: 0;
+    
+    
+}
+.hero-section .main .left  .content .title{
+    font-size: 32px !important;
+margin-bottom: 10px;
+color: black;
+line-height: 30px; 
+text-align:center;
+}
+
+
+.hero-section .slider-box .left .content .text{
+    /* font-size: 20px; */
+    margin-bottom: 10px;
+}
+.hero-section .slider-box .left .content .btn{
+ 
+    border-radius: 4px;
+    padding: 10px 30px;
+ /* font-weight: bold; */
+ /* font-weight: 600; */
+    margin-top: 10px;
+
+    font-size: 15px;
+}
+}
+@media (max-width:1290px) {
+    .hero-section .main .left  .content .title{
+        font-size: 59px;
+    /* margin-bottom: 20px;
+    font-weight:normal;
+    color: black;*/
+    line-height: 70px; 
+    }
+    
+}
+@media (max-width:1085px) {
+    .hero-section .main .left  .content .title{
+        font-size: 49px;
+  
+    line-height: 60px; 
+    }
+    
+}
+@media (max-width:892px) {
+    .hero-section .main .left  .content .title{
+        font-size: 39px;
+  
+    line-height: 50px; 
+    }
+    
+}
