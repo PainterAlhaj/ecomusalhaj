@@ -30,7 +30,7 @@ const App = () => {
 
    <CardSlider/>
    
-<ProductSlider/>
+{/* <ProductSlider/> */}
 <RoomSlider/>
 <FreeServices/>
 
