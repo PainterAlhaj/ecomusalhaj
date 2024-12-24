@@ -26,17 +26,17 @@ const App = () => {
    <MiniNavbar/>
   <Hero/>
    
-   {/* <GridDesign/> */}
+   <GridDesign/>
 
    <CardSlider/>
    
-{/* <ProductSlider/> */}
+<ProductSlider/>
 <RoomSlider/>
 <FreeServices/>
 
 <Gallery/>
 
-{/* <Footer/>    */}
+<Footer/>   
 
    </>
   )
