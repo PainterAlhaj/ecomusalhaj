@@ -26,7 +26,7 @@ const App = () => {
    <MiniNavbar/>
   <Hero/>
    
-   <GridDesign/>
+   {/* <GridDesign/> */}
 
    <CardSlider/>
    
@@ -36,7 +36,7 @@ const App = () => {
 
 <Gallery/>
 
-<Footer/>   
+{/* <Footer/>    */}
 
    </>
   )
@@ -44,6 +44,10 @@ const App = () => {
 
 
 export default App
+
+
+
+
 
 
 
