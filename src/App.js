@@ -17,6 +17,8 @@ import ProductSlider from './View/ProductSlider';
 import RoomSlider from './View/RoomSlider';
 import CardSlider2 from './View/CardSlider2';
 import GridDesign from './View/GridDesign';
+import SampleMenu from './View/SampleMenu';
+import MenuSlider from './View/MenuSlider';
 
 const App = () => {
   return (
@@ -24,9 +26,9 @@ const App = () => {
    
    <Navbar/>
    <MiniNavbar/>
-  <Hero/>
-   
-   {/* <GridDesign/> */}
+   <Hero/>
+  
+   <GridDesign/> 
 
    <CardSlider/>
    
@@ -44,7 +46,6 @@ const App = () => {
 
 
 export default App
-
 
 
 

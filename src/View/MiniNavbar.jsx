@@ -3,6 +3,13 @@ import React from 'react'
 import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
 import '../Assets/Css/MiniNavbar.css'
 import KeyboardArrowRightOutlinedIcon from "@mui/icons-material/KeyboardArrowRightOutlined";
+// import '../Assets/Css/SampleMenu.css'
+import productmenu1 from  '../Assets/img/image/product-menu1.jpg'
+import productmenu2 from  '../Assets/img/image/product-menu2.jpg'
+import { Button } from "@mui/material";
+import { LuArrowUpRight } from 'react-icons/lu';
+import SampleMenu from './SampleMenu';
+
 
 
 const MiniNavbar = () => {
@@ -122,22 +129,162 @@ const minimenuitems = [
    <>
 
 
-<Box className='mininavbar-container' sx={{display:'flex',justifyContent:'center',alignItems:'center',gap:'40px',
+<Box className='mininavbar-container' 
+sx={{display:'flex',justifyContent:'center',alignItems:'center',gap:'40px',
     paddingY:'20px'
 }}>
 
 <ul className='list-container'>
-    <li className='list'><a href="#" className='active'>Home
+    <li className='list home'><a href="#" className=' list-text active'>Home
    
         <KeyboardArrowDownOutlinedIcon/>
         </a></li>
-    <li className='list'><a href="#">Shop
+    <li className='list shop'><a className='list-text' href="#">Shop
+    <div className="shop-menu">
+        <div className="shop-container">
+          <div className="row-container">
+          <div className="row">
+            <div className="col one">
+              <div className="heading">Shop Layouts</div>
+              <ul>
+                <li>
+                  <a href="#"> Default</a>
+                </li>
+                <li>
+                  <a href="#"> Left sidebar</a>
+                </li>
+                <li>
+                  <a href="#">Right sidebar</a>
+                </li>
+                <li>
+                  <a href="#"> Fullwidth</a>
+                </li>
+                <li>
+                  <a href="#">Sub collection</a>
+                </li>
+                <li>
+                  Collections list
+                  <a href="#"></a>
+                </li>
+              </ul>
+            </div>
+            <div className="col two">
+                <div className="heading">Features</div>
+                <ul>
+                <li>
+                  <a href="#">                 Pagination links
+                  </a>
+                </li>
+                <li>
+                  <a href="#">Pagination loadmore
+                  </a>
+                </li>
+                <li>
+                  <a href="#">Pagination infinite scrolling
+                  </a>
+                </li>
+                <li>
+                  <a href="#"> Filter sidebar
+                  </a>
+                </li>
+                <li>
+                  <a href="#">Filter hidden
+                  </a>
+                </li>
+                
+              </ul>
+
+            </div>
+            <div className="col three">
+                <div className="heading">Product Styles</div>
+<ul>
+                <li>
+                  <a href="#">                 Product style list
+
+                  </a>
+                </li>
+                <li>
+                  <a href="#">Product style 01
+
+                  </a>
+                </li>
+                <li>
+                  <a href="#">Product style 02
+
+                  </a>
+                </li>
+                <li>
+                  <a href="#">Product style 03
+
+                  </a>
+                </li>
+                <li>
+                  <a href="#">Product style 04
+
+                  </a>
+                </li>
+                <li>
+                  <a href="#">Product style 05
+
+                  </a>
+                </li>
+                <li>
+                  <a href="#">Product style 06
+
+                  </a>
+                </li>
+                <li>
+                  <a href="#">Product style 07
+
+                  </a>
+                </li>
+                
+              </ul>
+            </div>
+            <div className="col four">
+<div className="menu-img">
+    <img src={productmenu1} alt="" />
+     <Button
+                        className="btn"
+                        variant="contained"
+                        disableRipple
+                        disableElevation
+                      >
+                        Men <LuArrowUpRight className="arrow-up" />
+                      </Button>
+</div>
+
+            </div>
+            <div className="col five">
+
+
+            <div className="menu-img">
+    <img src={productmenu2} alt="" />
+     <Button
+                        className="btn"
+                        variant="contained"
+                        disableRipple
+                        disableElevation
+                      >
+                        Men <LuArrowUpRight className="arrow-up" />
+                      </Button>
+</div>
+            </div>
+
+          </div>
+          </div>
+        </div>
+      </div>
+    <KeyboardArrowDownOutlinedIcon/>
+
+    </a></li>
+    <li className='list product'><a className='list-text' href="#">Product
+   <SampleMenu/>
+
     <KeyboardArrowDownOutlinedIcon/>
     </a></li>
-    <li className='list'><a href="#">Product
-    <KeyboardArrowDownOutlinedIcon/>
-    </a></li>
-    <li className='list pages'><a href="#" >Pages
+
+    <li className='list pages'><a className='list-text' href="#" >Pages
     {/* <Box
                   className="menubox"
                   sx={{
@@ -535,7 +682,7 @@ mb:'3px',
 
     <KeyboardArrowDownOutlinedIcon/>
     </a></li>
-    <li className='list blog'><a href="#">Blog
+    <li className='list blog'><a className='list-text' href="#">Blog
     <Box
                   className="menubox"
                   sx={{
@@ -597,11 +744,12 @@ mb:'3px',
                 </Box>
     <KeyboardArrowDownOutlinedIcon/>
     </a></li>
-    <li className='list'><a href="#">Buy Now</a></li>
+    <li className='list buynow'><a className='list-text' href="#">Buy Now</a></li>
 
 </ul>
 
 </Box>
+{/* <SampleMenu/> */}
 
 
    </>

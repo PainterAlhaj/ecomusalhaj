@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import '../../Assets/Css/Navbar.css';
 
 import Box from "@mui/material/Box";
-import { AppBar, Badge, Toolbar, List, ListItemButton, ListItemText, MenuItem, Menu } from "@mui/material";
+import { AppBar, Badge, Toolbar, List, ListItemButton, ListItemText, MenuItem, Menu, Drawer, Typography } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
 import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
 import { RiMenu2Fill } from "react-icons/ri";
+import { IoMdClose } from "react-icons/io";
 
 const Navbar = () => {
   const [anchorEl1, setAnchorEl1] = useState(null); // State for first menu
@@ -47,6 +48,10 @@ const Navbar = () => {
     setAnchorEl2(null);
   };
 
+
+    const [openMenu, setOpenMenu] = useState(false);
+  
+
   return (
     <>
       <AppBar
@@ -69,7 +74,9 @@ const Navbar = () => {
           }}
         >
           <Box className="left">
-            <RiMenu2Fill className="left-menuicon" />
+            <RiMenu2Fill className="left-menuicon"  onClick={(()=>{
+              setOpenMenu(!openMenu)
+            })}/>
             <Box
               className="dropdown"
               sx={{
@@ -244,6 +251,48 @@ const Navbar = () => {
           </Box>
         </Toolbar>
       </AppBar>
+
+
+
+      <Drawer className="navbar-drawer" anchor="left" open={openMenu} onClose={() => setOpenMenu(false)}>
+        <Box sx={{ width: 300 }}>
+          <Box
+            onClick={() => setOpenMenu(false)}
+            sx={{
+              // height: "50px",
+              display: "flex",
+              justifyContent: "flex-start",
+              alignItems: "center",
+              padding: "20px 20px",
+              borderBottom: "2px solid #F2F2F2",
+            }}
+          >
+       <div className="close-icon" style={{
+        fontSize:"25px"
+       }}>
+        <IoMdClose/>
+       </div>
+            
+          </Box>
+
+          <div className="all-list">
+            <ul>
+              <li>Home</li>
+              <li>Shop</li>
+              <li>Products</li>
+              <li>Pages</li>
+              <li>Blogs</li>
+              <li>Buy Now</li>
+
+
+
+            </ul>
+          </div>
+
+         
+        </Box>
+      </Drawer>
+
     </>
   );
 };

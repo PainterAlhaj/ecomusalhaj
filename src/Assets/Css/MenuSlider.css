@@ -1,0 +1,84 @@
+
+
+.productmenu-slider{
+    width: 400px;
+    /* padding: 20px 10px; */
+    /* display: flex; */
+    gap: 20px;
+    border: none !important;
+
+
+}
+
+ .productmenu-slider .menu-img{
+
+    position: relative;
+    height: 320px;
+    border: none !important;
+    /* width: 100%; */
+
+width: calc(100% - 30px) !important; 
+
+}
+
+
+
+
+ .productmenu-slider .menu-img img{
+
+    height: 100%;
+    width: 100%;
+  transition: all 1s ease;
+  object-fit: cover;
+  border-radius: 10px;
+  border: none !important;
+
+  
+  
+  }
+ .productmenu-slider .menu-img:hover img{
+    /* scale: 1.1; */
+  }
+.productmenu-slider .menu-img .btn{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    z-index: 10;
+    bottom:10%;
+    background: white;
+    color:black;
+    border-radius: 5px;
+    box-shadow: none;
+    padding: 10px 20px;
+    /* font-family: Albert Sans, sans-serif; */
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 500;
+    color: black;
+    text-transform:unset;
+    /* font-weight: 600; */
+    /* font-size: 16px;
+    line-height: 20px; */
+    /* font-weight: 500; */
+  transition: all 0.6s ease;
+  }
+
+
+
+  .productmenu-slider .menu-img .btn .arrow-up{
+    margin-left: 10px;
+    font-size: 0;
+    color: white;
+  transition: all 0.3s ease;
+  
+  
+  
+  }
+.productmenu-slider .menu-img .btn:hover{
+   background: #000; 
+   color: white;
+  }
+ .productmenu-slider .menu-img .btn:hover .arrow-up{
+    display: block;
+    font-size: 16px;
+  }
