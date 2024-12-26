@@ -35,6 +35,30 @@ display: block;
 
 
 
+
+
+.navbar-drawer {
+    position: relative;
+    overflow: hidden; /* Hides the scrollbar */
+}
+
+.navbar-drawer::-webkit-scrollbar {
+    width: 0; /* Removes the scrollbar */
+}
+
+.navbar-drawer .scroll {
+    overflow-y: auto; /* Enables scrolling */
+}
+
+.navbar-drawer .scroll::-webkit-scrollbar {
+    width: 0; /* Ensures the scrollbar is hidden */
+}
+.navbar-drawer::-webkit-scrollbar{
+    display: none;
+    width: 0;
+}
+
+
 .navbar-drawer .all-list ul{
     padding: 20px 20px;
 }
@@ -43,5 +67,91 @@ display: block;
     width: 100%;
     margin-bottom: 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* font-family: Albert Sans, sans-serif; */
+font-weight: 400;
+    font-size: 14px;
+    cursor: pointer;
+}
+.navbar-drawer .btn-group{
+    padding: 10px 20px;
+    
+}
+.navbar-drawer .btn-group .btn{
+    background: #f2f2f2;
+    color:black;
+    border-radius: 2px;
+    box-shadow: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    text-transform:unset;
+    font-family: Albert Sans, sans-serif;
+border-radius: 4px;
     font-size: 15px;
 }
+.navbar-drawer .btn-group .btn:hover{
+    background: #000000;
+    color: white;
+}
+.navbar-drawer .need-help{
+    font-size: 15px;
+    font-family: Albert Sans, sans-serif;
+border-bottom: 1px solid black;
+    margin: 10px 20px;
+    padding-bottom: 5px;
+    width: fit-content;
+    
+}
+.navbar-drawer .contact{
+    font-size: 15px;
+
+    font-family: Albert Sans, sans-serif;
+
+    color:  #8e8a8a;
+    padding: 10px 20px;
+
+}
+.navbar-drawer .contact p{
+    margin-bottom: 10px;
+}
+.navbar-drawer .drawer-footer{
+    padding: 10px 20px;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    background: white;
+
+
+}
+
+.navbar-drawer .drawer-footer .btn{
+    background: #f2f2f2;
+    color:black;
+    border-radius: 2px;
+    box-shadow: none;
+    padding: 5px 20px;
+    /* margin-right: 10px; */
+    text-transform:unset;
+    font-family: Albert Sans, sans-serif;
+    font-weight: 500;
+border-radius: 4px;
+    font-size: 15px;
+}
+
+.navbar-drawer .drawer-footer .btn:hover{
+    background: #000000;
+    color: white;
+}
+
+.navbar-drawer   .drawerlist{
+    border-left: 1px solid #f2f2f2;
+    margin:  20px 20px;
+cursor: default;
+}
+.navbar-drawer    .drawerlist li a{
+text-decoration: none;
+color: black;
+font-size: 13px;
+}
+
+

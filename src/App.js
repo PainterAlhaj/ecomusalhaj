@@ -34,14 +34,14 @@ const App = () => {
 <Hero/>
   
    {/* <GridDesign/>  */}
-
+{/* 
    <CardSlider/>
    
 <ProductSlider/>
 <RoomSlider/>
 <FreeServices/>
 
-<Gallery/>
+<Gallery/> */}
 
 {/* <Footer/>    */}
 
