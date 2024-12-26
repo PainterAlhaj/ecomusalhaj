@@ -8,6 +8,9 @@ import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
 import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
+import { MdFavoriteBorder } from "react-icons/md";
+import { IoSearchOutline } from "react-icons/io5";
+import { GoPerson } from "react-icons/go";
 import { RiMenu2Fill } from "react-icons/ri";
 import { IoMdClose } from "react-icons/io";
 
@@ -610,8 +613,12 @@ style={{display:`${blogstouch?'block':'none'}`}}
             </ul>
           </div>
           <div className="btn-group">
-            <Button variant="contained" className="btn">Wishlist</Button>
-            <Button  variant='contained' className="btn">Search</Button>
+            <Button variant="contained" className="btn"> <MdFavoriteBorder style={{
+              marginRight:'8px',fontSize:'18px'
+            }}/> Wishlist</Button>
+            <Button  variant='contained' className="btn"> <IoSearchOutline style={{
+              marginRight:'8px',fontSize:'18px'
+            }}/> Search</Button>
 
           </div>
           <p className="need-help">
@@ -626,7 +633,11 @@ Need Help ?
 </div>
 
 <div className="drawer-footer">
-<Button variant="contained" className="btn">Login</Button>
+<Button variant="contained" className="btn"><GoPerson
+style={{
+  marginRight:'8px',fontSize:'18px'
+}}
+/>Login</Button>
   
 </div>
          
