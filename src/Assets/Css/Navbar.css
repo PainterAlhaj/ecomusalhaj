@@ -32,3 +32,16 @@ display: block;
         display: none;
     }
 }
+
+
+
+.navbar-drawer .all-list ul{
+    padding: 20px 20px;
+}
+.navbar-drawer .all-list ul li{
+    list-style: none;
+    width: 100%;
+    margin-bottom: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+}
