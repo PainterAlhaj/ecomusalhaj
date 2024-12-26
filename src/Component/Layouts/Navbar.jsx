@@ -100,16 +100,19 @@ const Navbar = () => {
                     overflow: "hidden",
                     whiteSpace: "nowrap",
                     textOverflow: "ellipsis",
+                    // border:'1px solid black'
                   }}
                 >
                   <ListItemText
                     secondary={options[selectedIndex1]}
                     sx={{
                       fontSize: "14px",
-                      maxWidth: "150px",
+                      // maxWidth: "150px",
                       overflow: "hidden",
                       whiteSpace: "nowrap",
                       textOverflow: "ellipsis",
+                    // border:'1px solid red'
+
                     }}
                   />
                   <KeyboardArrowDownOutlinedIcon
@@ -123,11 +126,17 @@ const Navbar = () => {
                   />
                 </ListItemButton>
               </List>
-              <Menu
+              <Menu 
                 id="lock-menu1"
                 anchorEl={anchorEl1}
                 open={Boolean(anchorEl1)}
                 onClose={handleClose1}
+                sx={{
+                
+                //  border:'1px solid black',
+                 padding:'0',
+                 margin:'0'
+                }}
               >
                 {options.map((option, index) => (
                   <MenuItem

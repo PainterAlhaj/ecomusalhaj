@@ -3,12 +3,13 @@ import React from 'react'
 import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
 import '../Assets/Css/MiniNavbar.css'
 import KeyboardArrowRightOutlinedIcon from "@mui/icons-material/KeyboardArrowRightOutlined";
-// import '../Assets/Css/SampleMenu.css'
+import '../Assets/Css/SampleMenu.css'
 import productmenu1 from  '../Assets/img/image/product-menu1.jpg'
 import productmenu2 from  '../Assets/img/image/product-menu2.jpg'
 import { Button } from "@mui/material";
 import { LuArrowUpRight } from 'react-icons/lu';
 import SampleMenu from './SampleMenu';
+import SampleHomemenu from './SampleHomemenu';
 
 
 
@@ -131,12 +132,12 @@ const minimenuitems = [
 
 <Box className='mininavbar-container' 
 sx={{display:'flex',justifyContent:'center',alignItems:'center',gap:'40px',
-    paddingY:'20px'
+    paddingY:'20px',position:'relative',
 }}>
 
 <ul className='list-container'>
     <li className='list home'><a href="#" className=' list-text active'>Home
-   
+   <SampleHomemenu/>
         <KeyboardArrowDownOutlinedIcon/>
         </a></li>
     <li className='list shop'><a className='list-text' href="#">Shop
@@ -266,7 +267,7 @@ sx={{display:'flex',justifyContent:'center',alignItems:'center',gap:'40px',
                         disableRipple
                         disableElevation
                       >
-                        Men <LuArrowUpRight className="arrow-up" />
+                        Women <LuArrowUpRight className="arrow-up" />
                       </Button>
 </div>
             </div>
@@ -362,12 +363,11 @@ sx={{display:'flex',justifyContent:'center',alignItems:'center',gap:'40px',
                   className="menubox"
                   sx={{
                     position: "absolute",
-                    top: "25px",
+                    top: "40px",
                     // paddingTop: "40px",
                     // width: "200px",
                     display: "none",
                     zIndex: "10",
-                    // border:'1px solid'
                   }}
                 >
                   <List
@@ -687,7 +687,7 @@ mb:'3px',
                   className="menubox"
                   sx={{
                     position: "absolute",
-                    top: "25px",
+                    top: "40px",
                     // paddingTop: "40px",
                     width: "250px",
                     display: "none",

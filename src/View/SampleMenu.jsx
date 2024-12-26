@@ -232,7 +232,15 @@ Product description list
                       </li>
 
                       <li>
-                      <Badge badgeContent={'New'} color="primary" >
+                      <Badge badgeContent={'New'} color="primary" 
+                      sx={{ 
+                       '& .MuiBadge-badge': {
+                    backgroundColor: '#48D4BB', // Custom color
+                    color: 'white', 
+                    fontSize:'11px'
+                    // Text color inside the badge
+                  },
+                  }} >
 
                         <a href="#">
                        Quick order list
@@ -253,7 +261,10 @@ Product description list
 
                   
                   <div className="col five">
-                    
+         <div className="heading">
+         Best seller
+
+          </div>           
 
 
 <MenuSlider/>

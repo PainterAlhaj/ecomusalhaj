@@ -1,0 +1,124 @@
+.home-menu{
+    display: none;
+/* background: #FAFAFA; */
+    
+    z-index: 10;
+  /* border: 1px solid black; */
+    /* padding: 17px 50px; */
+padding-top: 17px;
+    /* max-width: 1540px; */
+  overflow-y: scroll;
+}
+.home-menu .home-menu-container{
+    position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+    padding: 30px 30px;
+    background: white;
+    background: #FEFEFE;
+border-top: 1px solid #D1CEC6;
+
+  /* box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); */
+
+
+
+}
+.home-menu .row{
+    display: flex;
+    flex-wrap: wrap;
+  /* border: 1px solid green; */
+
+    justify-content: center;
+    /* align-items: center; */
+/* background: #FAFAFA; */
+    background: #FEFEFE;
+    /* padding: 10px 30px; */
+
+}
+
+
+
+/* @media (min-width: 1150px) {
+    .home {
+        padding-left: 50px;
+        padding-right: 50px;
+        max-width: 1140px;
+    }
+}
+
+
+
+@media (min-width: 992px) {
+    .home-menu {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 768px) {
+    .home-menu  {
+        padding-left: 30px;
+        padding-right: 30px;
+        max-width: 720px;
+
+    }
+}
+
+@media (min-width: 576px) {
+    .home-menu{
+        max-width: 540px;
+    }
+} */
+
+.home-menu .row .col{
+height: 220px;
+width: 160px; 
+margin-right: 20px;
+margin-bottom: 20px;
+background: white;
+padding: 20px 10px ;
+padding-top: 5px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items:center;
+box-shadow: 0 0  0 10px  #FAFAFA;
+border: 1px solid transparent;
+border-radius: 0;
+
+}
+.home-menu .row .col:hover{
+    border: 1px solid black;
+    border-radius: 5px;
+
+}
+
+.home-menu .row .col img{
+    height: 200px;
+    width: 100%;
+border-radius: 8px;
+    object-fit: cover;
+    cursor: pointer;
+    
+   
+}
+.home-menu .row .col p{
+    margin: 10px 0;
+    font-family: Albert Sans, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.home-menu .home-menu-container .btn{
+    background: #000000;
+    color:white;
+    border-radius: 2px;
+    box-shadow: none;
+    padding: 10px 30px;
+    text-transform:unset;
+    font-family: Albert Sans, sans-serif;
+    margin-top: 20px;
+
+    font-size: 17px;
+}

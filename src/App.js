@@ -19,16 +19,21 @@ import CardSlider2 from './View/CardSlider2';
 import GridDesign from './View/GridDesign';
 import SampleMenu from './View/SampleMenu';
 import MenuSlider from './View/MenuSlider';
+import SampleHomemenu from './View/SampleHomemenu';
 
 const App = () => {
   return (
    <>
    
+
+{/* <SampleHomemenu/> */}
+
    <Navbar/>
    <MiniNavbar/>
-   <Hero/>
+
+<Hero/>
   
-   <GridDesign/> 
+   {/* <GridDesign/>  */}
 
    <CardSlider/>
    
