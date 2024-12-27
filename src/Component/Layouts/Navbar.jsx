@@ -14,11 +14,12 @@ import { GoPerson } from "react-icons/go";
 import { RiMenu2Fill } from "react-icons/ri";
 import { IoMdClose } from "react-icons/io";
 
-const Navbar = ({modalopen,loginmodal}) => {
+const Navbar = ({modalopen,loginmodal,searchdrawerevent}) => {
   const [anchorEl1, setAnchorEl1] = useState(null); // State for first menu
   const [anchorEl2, setAnchorEl2] = useState(null); // State for second menu
   const [selectedIndex1, setSelectedIndex1] = useState(1);
   const [selectedIndex2, setSelectedIndex2] = useState(0);
+
 
   const options = ["EUR | Germany", "EUR", "USD | United States", "VND | Vietnam"];
   const options2 = ["English", "Hindi", "Gujarati"];
@@ -339,7 +340,7 @@ const [productstyletouch,setproductstyletouch]=useState(false)
                 display: "flex",
               }}
             >
-              <SearchIcon className="one" sx={{ cursor: "pointer" }} />
+              <SearchIcon className="one" sx={{ cursor: "pointer" }} onClick={searchdrawerevent}/>
               <PersonOutlineOutlinedIcon className="two" sx={{ cursor: "pointer" }} 
               
               onClick={(()=>{
@@ -387,7 +388,6 @@ const [productstyletouch,setproductstyletouch]=useState(false)
         >
         <Box sx={{ width: 350,position:'relative' ,}}>
           <Box
-            onClick={() => setOpenMenu(false)}
             sx={{
               // height: "50px",
               display: "flex",
@@ -397,7 +397,10 @@ const [productstyletouch,setproductstyletouch]=useState(false)
               borderBottom: "2px solid #F2F2F2",
             }}
           >
-       <div className="close-icon" style={{
+       <div className="close-icon"
+            onClick={() => setOpenMenu(false)}
+       
+       style={{
         fontSize:"25px"
        }}>
         <IoMdClose/>

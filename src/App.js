@@ -6,6 +6,8 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import "@fontsource/albert-sans"; // Defaults to weight 400
 import "@fontsource/albert-sans/400.css"; // Specify weight
+import "@fontsource/albert-sans/500.css"; // Specify weight
+
 import "@fontsource/albert-sans/400-italic.css";
 import Navbar from './Component/Layouts/Navbar';
 import MiniNavbar from './View/MiniNavbar';
@@ -24,24 +26,31 @@ import SampleMenu from './View/SampleMenu';
 import MenuSlider from './View/MenuSlider';
 import SampleHomemenu from './View/SampleHomemenu';
 import LoginModal from './View/LoginModal';
+import SearchDrawer from './View/SearchDrawer';
 
 const App = () => {
    const [loginmodal,setloginmodal]=useState(false)
+   const [opensearchdrawer, setopensearchdrawer] = useState(false);
+
 
    const modalopen=(()=>{
       setloginmodal(!loginmodal)
     })
+    const searchdrawerevent=(()=>{
+      setopensearchdrawer(!opensearchdrawer)
+    })
 
   return (
    <>
-   
 
 {/* <SampleHomemenu/> */}
-<LoginModal loginmodal={loginmodal} setloginmodal={setloginmodal}/>
-   <Navbar modalopen={modalopen} loginmodal={loginmodal} />
+ <LoginModal loginmodal={loginmodal} setloginmodal={setloginmodal}/>
+   <SearchDrawer opensearchdrawer={opensearchdrawer} setopensearchdrawer={setopensearchdrawer}/>
+
+   <Navbar modalopen={modalopen} loginmodal={loginmodal}  searchdrawerevent={searchdrawerevent}/>
    <MiniNavbar/>
 
-<Hero/>
+<Hero/> 
   
    {/* <GridDesign/>  */}
 

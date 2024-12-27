@@ -37,6 +37,7 @@ border-radius: 0 !important;
 
 
 
+
 .card-container .slider-container .slick-dots {
   position: absolute;
   bottom: 0;
@@ -108,7 +109,11 @@ transition: all 0.3s ease;
   font-size: 16px;
 }
 
-
+@media (min-width:1400px) {
+  .card-container .slider-container .card{
+    height: 380px ;
+  }
+}
 @media (max-width:1400px){
   .card-container .slider-container .card{
        height: 350px;

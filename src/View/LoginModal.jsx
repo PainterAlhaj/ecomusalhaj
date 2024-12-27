@@ -16,6 +16,18 @@ const style = {
   border:'none',
   boxShadow: 24,
   p: 4,
+  '@media (max-width:1150px)':{
+    width:'500px'
+  },
+  '@media (max-width:767px)':{
+    width:'400px'
+  },
+  '@media (max-width:599px)':{
+    width:'300px'
+  },
+  '@media (max-width:480px)':{
+    width:'250px'
+  }
 };
 
 export default function LoginModal({loginmodal,setloginmodal}) {
@@ -29,7 +41,6 @@ export default function LoginModal({loginmodal,setloginmodal}) {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
         sx={{
-
           
         }}
       >
@@ -44,6 +55,7 @@ export default function LoginModal({loginmodal,setloginmodal}) {
           <div className="form">
 
           <Box
+         
       component="form"
       noValidate
       autoComplete="off"
