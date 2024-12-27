@@ -1,0 +1,40 @@
+.modal-content{
+/* border: 1px solid black; */
+padding: 20px 10px;
+font-family: "Albert Sans";
+
+}
+.modal-content .heading span{
+font-size: 18px;
+font-size: 28px;
+line-height: 33.6px;
+}
+.modal-content  .form{
+    margin-top: 20px;
+}
+.modal-content .form .form-input{
+    margin-bottom: 10px;
+}
+.modal-content  .form a{
+    width: 100%;
+    color: black;
+}
+.modal-content  .form .btn{
+    background: #000000;
+
+    color:white;
+    border-radius: 2px;
+    box-shadow: none;
+    padding: 10px 30px;
+    text-transform:unset;
+width: 40%;
+    margin-top: 20px;
+
+    font-size: 17px;
+}
+.modal-content .form .login-signup{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}

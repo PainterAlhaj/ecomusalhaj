@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './App.css'
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
+import "@fontsource/albert-sans"; // Defaults to weight 400
+import "@fontsource/albert-sans/400.css"; // Specify weight
+import "@fontsource/albert-sans/400-italic.css";
 import Navbar from './Component/Layouts/Navbar';
 import MiniNavbar from './View/MiniNavbar';
 import Footer from './Component/Layouts/Footer';
@@ -20,15 +23,22 @@ import GridDesign from './View/GridDesign';
 import SampleMenu from './View/SampleMenu';
 import MenuSlider from './View/MenuSlider';
 import SampleHomemenu from './View/SampleHomemenu';
+import LoginModal from './View/LoginModal';
 
 const App = () => {
+   const [loginmodal,setloginmodal]=useState(false)
+
+   const modalopen=(()=>{
+      setloginmodal(!loginmodal)
+    })
+
   return (
    <>
    
 
 {/* <SampleHomemenu/> */}
-
-   <Navbar/>
+<LoginModal loginmodal={loginmodal} setloginmodal={setloginmodal}/>
+   <Navbar modalopen={modalopen} loginmodal={loginmodal} />
    <MiniNavbar/>
 
 <Hero/>

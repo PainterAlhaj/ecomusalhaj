@@ -39,7 +39,9 @@ display: block;
 
 .navbar-drawer {
     position: relative;
-    overflow: hidden; /* Hides the scrollbar */
+    overflow: hidden; 
+    width: 350px;
+
 }
 
 .navbar-drawer::-webkit-scrollbar {
@@ -114,12 +116,13 @@ border-bottom: 1px solid black;
     margin-bottom: 10px;
 }
 .navbar-drawer .drawer-footer{
-    padding: 10px 20px;
-    position: sticky;
+    position:fixed;
     bottom: 0;
     left: 0;
     z-index: 10;
     background: white;
+    padding: 10px 20px;
+
 
 
 }
@@ -152,6 +155,9 @@ cursor: default;
 text-decoration: none;
 color: black;
 font-size: 13px;
+}
+.navbar-drawer .drawer-dropdown{
+    width: 100%;
 }
 
 
