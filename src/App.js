@@ -27,6 +27,7 @@ import MenuSlider from './View/MenuSlider';
 import SampleHomemenu from './View/SampleHomemenu';
 import LoginModal from './View/LoginModal';
 import SearchDrawer from './View/SearchDrawer';
+import SixSection from './View/SixSection';
 
 const App = () => {
    const [loginmodal,setloginmodal]=useState(false)
@@ -55,6 +56,8 @@ const App = () => {
    {/* <GridDesign/>  */}
 
    <CardSlider/>
+   <SixSection/>
+
    
 <ProductSlider/>
 <RoomSlider/>
