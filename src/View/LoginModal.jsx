@@ -20,13 +20,13 @@ const style = {
     width:'500px'
   },
   '@media (max-width:767px)':{
-    width:'400px'
+    width:'450px'
   },
   '@media (max-width:599px)':{
-    width:'300px'
+    width:'450px'
   },
   '@media (max-width:480px)':{
-    width:'250px'
+    width:'90%'
   }
 };
 
