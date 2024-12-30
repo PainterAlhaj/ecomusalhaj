@@ -15,6 +15,11 @@ import KeyboardArrowLeftOutlinedIcon from '@mui/icons-material/KeyboardArrowLeft
 import KeyboardArrowRightOutlinedIcon from '@mui/icons-material/KeyboardArrowRightOutlined';
 import { GrFormPrevious } from "react-icons/gr";
 import { LuArrowUpRight } from 'react-icons/lu';
+import { RiShoppingBag2Line } from "react-icons/ri";
+import { MdFavoriteBorder } from "react-icons/md";
+import { IoEyeOutline } from "react-icons/io5";
+
+import { TbArrowsCross } from "react-icons/tb";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -51,9 +56,9 @@ const ProductSlider = () => {
     };
   
     // Debugging currentSlide value
-    React.useEffect(() => {
-      console.log('Current Slide:', currentSlide); 
-    }, [currentSlide]);
+    // React.useEffect(() => {
+    //   console.log('Current Slide:', currentSlide); 
+    // }, [currentSlide]);
   
   const allCards = [
     { id: 1, img: product1, caption:'AJ Wall Sconce',price:'$982.00'},
@@ -123,7 +128,26 @@ const ProductSlider = () => {
                   image={card.img}
                   alt={card.btn}
                 />
-                {/* <CardActions></CardActions> */}
+                <CardActions className='card-action'>
+
+<div className="action-icons">
+<div className="action-icon show">
+  <RiShoppingBag2Line/>
+</div>
+<div className="action-icon hide">
+  <MdFavoriteBorder />
+</div>
+<div className="action-icon hide">
+  <TbArrowsCross />
+</div>
+<div className="action-icon show">
+  <IoEyeOutline />
+</div>
+
+</div>
+
+
+                </CardActions>
                <CardContent className='card-content'>
                 <a>{card.caption}</a>
                 <span>{card.price}</span>

@@ -11,7 +11,7 @@ import { LuArrowUpRight } from 'react-icons/lu';
 import SampleMenu from './SampleMenu';
 import SampleHomemenu from './SampleHomemenu';
 
-
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 const MiniNavbar = () => {
 
@@ -138,7 +138,7 @@ sx={{display:'flex',justifyContent:'center',alignItems:'center',gap:'40px',
 <ul className='list-container'>
     <li className='list home'><a href="#" className=' list-text active'>Home
    <SampleHomemenu/>
-        <KeyboardArrowDownOutlinedIcon/>
+      <MdOutlineKeyboardArrowDown className='arrow-down'/>
         </a></li>
     <li className='list shop'><a className='list-text' href="#">Shop
     <div className="shop-menu">
@@ -276,13 +276,15 @@ sx={{display:'flex',justifyContent:'center',alignItems:'center',gap:'40px',
           </div>
         </div>
       </div>
-    <KeyboardArrowDownOutlinedIcon/>
+      <MdOutlineKeyboardArrowDown  className='arrow-down'/>
+
 
     </a></li>
     <li className='list product'><a className='list-text' href="#">Product
    <SampleMenu/>
 
-    <KeyboardArrowDownOutlinedIcon/>
+   <MdOutlineKeyboardArrowDown  className='arrow-down'/>
+
     </a></li>
 
     <li className='list pages'><a className='list-text' href="#" >Pages
@@ -680,7 +682,8 @@ mb:'3px',
 
 
 
-    <KeyboardArrowDownOutlinedIcon/>
+                <MdOutlineKeyboardArrowDown  className='arrow-down'/>
+
     </a></li>
     <li className='list blog'><a className='list-text' href="#">Blog
     <Box
@@ -742,7 +745,9 @@ mb:'3px',
                     ))}
                   </Box>
                 </Box>
-    <KeyboardArrowDownOutlinedIcon/>
+    {/* <KeyboardArrowDownOutlinedIcon/> */}
+    <MdOutlineKeyboardArrowDown  className='arrow-down'/>
+
     </a></li>
     <li className='list buynow'><a className='list-text' href="#">Buy Now</a></li>
 

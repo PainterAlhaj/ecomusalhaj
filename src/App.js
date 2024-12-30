@@ -53,7 +53,7 @@ const App = () => {
 
 <Hero/> 
   
-   {/* <GridDesign/>  */}
+   <GridDesign/> 
 
    <CardSlider/>
    {/* <SixSection/> */}
@@ -65,7 +65,7 @@ const App = () => {
 
 <Gallery/>
 
-{/* <Footer/>    */}
+<Footer/>   
 
    </>
   )
@@ -73,6 +73,7 @@ const App = () => {
 
 
 export default App
+
 
 
 

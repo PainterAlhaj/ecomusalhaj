@@ -1,12 +1,13 @@
 /* / Parallax Background Section / */
 .sixth-section {
+
     background-attachment: fixed;
     background-Image: url('../../Assets/img/image/motionimage.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 120vh;
-    width: 100%;
+    /* width: 100%; */
     display: flex;
     flex-direction: column;
     justify-content: center;

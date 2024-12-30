@@ -8,6 +8,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import '../../Assets/Css/Footer.css'
 import ArrowOutwardRoundedIcon from '@mui/icons-material/ArrowOutwardRounded';
+import { IoIosAdd } from "react-icons/io";
 
 const Footer = () => {
   const [expanded, setExpanded] = useState(false);
@@ -43,16 +44,14 @@ const Footer = () => {
     <>
 
 
-    
-<Footerbox1 className='footerbox1'
-
-   >
+    <footer>
+<Footerbox1 className='footerbox1'>
        
        <div className="main-footer">
        <div className='footer-left'>
        <Box  className='ecomus'
         sx={{
-      display:{xs:'none',sm:'flex'},
+      display:'flex',
           
           flexDirection:'column',
           // justifyContent:'center',
@@ -60,7 +59,7 @@ const Footer = () => {
           // border:'2px solid black',
             flex:'1',
            
-            height:{sm:'150px',md:'300px'},
+            // height:{sm:'150px !important',md:'300px !important'} ,
            
 
 
@@ -82,8 +81,7 @@ style={{
   alignItems:'center',
   marginTop:'20px',
   color:'black',
-  fontFamily:'Arial, Helvetica, sans-serif',
-  fontSize:'15px',
+  fontSize:'14px',
   paddingBottom:'10px',
   borderBottom:'1px solid black'
 }}> Get direction
@@ -92,7 +90,7 @@ style={{
 <ArrowOutwardRoundedIcon
     sx={{
       ml:"10px",
-      fontSize:'18px'
+      fontSize:'14px'
     }}/>
 </a>
 
@@ -119,12 +117,11 @@ style={{
       borderRadius:'50%',
       padding:'5px 5px',
       border:'1px solid black',
-      marginRight:'10px' 
+      marginRight:'10px' ,
     }}
   >
     <FacebookOutlinedIcon sx={{
       color: 'black', 
-      // fontSize:'25px', 
       '&:hover': {
         color: '#5FCBC4',  
         cursor: 'pointer',  
@@ -241,7 +238,6 @@ sx={{
   // border:'2px solid black',
 
     flex:'1',
-    height:{sm:'150px',md:'300px'},
             
 
 
@@ -294,7 +290,7 @@ sx={{
 
 
     flex:'1',
-    height:{sm:'150px',md:'300px'},
+    // height:{sm:'150px',md:'300px'},
            
 
 }}>
@@ -322,164 +318,219 @@ sx={{
 
 
 
-{/* <Box
+<Box className='accordion-container'
 sx={{
   display:{xs:'block',sm:'none',
-    width:'80%',
-    // border:'2px solid',
-    color:'#777777',
 
-    margin:'0 auto',
-    '@media (max-width:760px)':{
-      display:'block'
+    color:'#777777',
+    // marginTop:'20px',
+
+
+    '@media (max-width:767px)':{
+      display:'block',
     }
   }
 }}>
 
 
-<Accordion
+<Accordion  className='accordion'
         expanded={expanded === 'panel1'}
         onChange={handleChange('panel1')}
         sx={{
-          width: '100%',
           boxShadow: 'none',
+          margin:'0 !important',
+      "&:before": {
+          display: "none", // डिफ़ॉल्ट बॉर्डर हटाने के लिए
+        },
         }}
       >
         <AccordionSummary
           aria-controls="panel1d-content"
           id="panel1d-header"
           sx={{
-            borderBottom: '1px solid grey',
-            width: '100%',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
+            display:'flex !important',
+          justifyContent:'flex-start !important',
+            alignItems:'flex-start !important'
           }}
         >
-          <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
-            About
-          </Typography>
-          <KeyboardArrowDownOutlinedIcon sx={{ ml: 'auto' }} />
+          <h6  style={{
+            fontFamily:'Albert sans',
+            fontSize:'18px',
+            fontWeight:'500',
+            
+           }}>
+            Help
+          </h6>
+          {/* <KeyboardArrowDownOutlinedIcon sx={{ ml: 'auto' }} /> */}
+          <IoIosAdd style={{ marginLeft: 'auto',fontSize:'24px' ,
+            display:'flex !important',
+            justifyContent:'flex-start !important',
+            alignItems:'flex-start !important'
+          }} />
+
         </AccordionSummary>
-        <AccordionDetails>
-          <Typography variant="h6" fontSize="30px" color="#222222" letterSpacing={4}>
-            Ulti<span style={{ fontWeight: 'bold' }}>kart</span>
-          </Typography>
-          <Box sx={{ display: 'flex', gap: '20px' }}>
-            <FacebookOutlinedIcon />
-            <InstagramIcon />
-            <TwitterIcon />
-            <GoogleIcon />
-          </Box>
+        <AccordionDetails className='accordiondetails-help'>
+        <ul>
+          <li><a href="#">
+          Privacy Policy
+
+            </a></li>
+          <li><a href="#">
+Returns + Exchanges
+</a></li>
+          <li><a href="#">
+Shipping
+            </a></li>
+          <li><a href="#">
+Terms & Conditions
+</a></li>
+          <li><a href="#">
+FAQ’s
+            </a></li>
+          <li><a href="#">
+Compare
+            </a></li>
+          <li><a href="#">
+My Wishlist
+            </a></li>
+
+        </ul>
         </AccordionDetails>
       </Accordion>
 
-      <Accordion
+      <Accordion className='accordion'
         expanded={expanded === 'panel2'}
         onChange={handleChange('panel2')}
         sx={{
-          width: '100%',
           boxShadow: 'none',
+          margin:'0 !important',
+          "&:before": {
+          display: "none", 
+        },
         }}
       >
         <AccordionSummary
           aria-controls="panel2d-content"
           id="panel2d-header"
+          
           sx={{
-            borderBottom: '1px solid grey',
-            width: '100%',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
+            border:'none !important'
+          
           }}
         >
-          <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
-            Store Information
-          </Typography>
-          <KeyboardArrowDownOutlinedIcon sx={{ ml: 'auto' }} />
+        <h6  style={{
+            fontFamily:'Albert sans',
+            fontSize:'18px',
+            fontWeight:'500'
+           }}>
+            About us
+          </h6>
+          {/* <KeyboardArrowDownOutlinedIcon sx={{ ml: 'auto' }} /> */}
+          <IoIosAdd style={{ marginLeft: 'auto',fontSize:'24px' ,
+            display:'flex !important',
+            justifyContent:'flex-start !important',
+            alignItems:'flex-start !important'
+          }} />
+
         </AccordionSummary>
-        <AccordionDetails>
-          <p>Multikart Demo Store, Demo store India 345-659</p>
-          <p>Call Us: 123-456-7898</p>
-          <p>Email Us: Support@Fiot.com</p>
-          <p>Fax: 123456</p>
+
+        <AccordionDetails className='accordiondetails-help'>
+        <ul>
+          <li><a href="#">
+          Our Story
+
+            </a></li>
+          <li><a href="#">
+          Visit Our Store
+</a></li>
+          <li><a href="#">
+          Contact Us
+            </a></li>
+          <li><a href="#">
+          About Us
+</a></li>
+         
+
+        </ul>
         </AccordionDetails>
+
+       
       </Accordion>
 
-      <Accordion
+      <Accordion className='accordion'
         expanded={expanded === 'panel3'}
         onChange={handleChange('panel3')}
         sx={{
-          width: '100%',
           boxShadow: 'none',
+          margin:'0 !important',
+          "&:before": {
+          display: "none", 
+        },
+    
         }}
       >
         <AccordionSummary
           aria-controls="panel3d-content"
           id="panel3d-header"
           sx={{
-            borderBottom: '1px solid grey',
-            width: '100%',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
+           
           }}
         >
-          <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
-            My Account
-          </Typography>
-          <KeyboardArrowDownOutlinedIcon sx={{ ml: 'auto' }} />
+          <h6  style={{
+            fontFamily:'Albert sans',
+            fontSize:'18px',
+            fontWeight:'500'
+           }}>
+            Sign up for email
+          </h6>
+
+
+          
+          <IoIosAdd style={{ marginLeft: 'auto',fontSize:'24px' ,
+            display:'flex !important',
+            justifyContent:'flex-start !important',
+            alignItems:'flex-start !important'
+          }} />
         </AccordionSummary>
         <AccordionDetails>
-          <Box
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '20px',
-              paddingTop: '20px',
-            }}
-          >
-            <Box>Mens</Box>
-            <Box>Womens</Box>
-            <Box>Clothing</Box>
-            <Box>Accessories</Box>
-            <Box>Featured</Box>
-            <Box>Service</Box>
-            <Box>Cart</Box>
-            <Box>My Order</Box>
-            <Box>FAQ</Box>
-            <Box>New Product</Box>
-            <Box>Featured Product</Box>
-          </Box>
+        <p className='accordion-same'>Sign up to get first dibs on new arrivals, sales, exclusive content, events and more!</p>
+  <Box  className='accordion-input-box'>
+    <input type="accordion-text" placeholder='Enter Your Email...' 
+    className='accordion-send-message'/>
+    <Button variant='contained' className='accordion-btn'>Subscribe <ArrowOutwardRoundedIcon
+    sx={{
+      ml:"10px",
+      fontSize:'20px'
+    }}/></Button>
+  </Box>
         </AccordionDetails>
       </Accordion>
 
       </Box>
 
- */}
+<div className="footer3-container">
     <Footerbox3 className='footerbox3'
     
     sx={{
      
-      flexDirection:{xs:'column',sm:'row'},
-     gap:{xs:'5px',sm:'10px'},
+   
     
     }}
     >
-      <p style={{
+      <p 
+      style={{
+        display:'flex !important',
 color:'#777777',
 textAlign:'center',
-fontSize:'15px',
-marginLeft:'-50px',
-marginBottom:'20px',
-// border:'2px solid black',
-fontFamily:'Arial, Helvetica, sans-serif',
-'@media (max-width:770px)':{
-marginBottom:'50px'
-      
-      },
+fontSize:'14px',
+fontFamily: "Albert sans",
+alignItems:'center  !important',
+justifyContent:'center !important',
 
-      }}> @2023-24 themeforest powered by pixelstrap</p>
+
+
+      }}
+      > © 2024 Ecomus Store. All Rights Reserved</p>
 
       <div className="img-cont"
       style={{
@@ -494,7 +545,8 @@ marginBottom:'50px'
 
       </div>
     </Footerbox3>
-   
+   </div>
+   </footer>
     </>
   )
 }

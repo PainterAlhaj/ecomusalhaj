@@ -13,6 +13,8 @@ import { IoSearchOutline } from "react-icons/io5";
 import { GoPerson } from "react-icons/go";
 import { RiMenu2Fill } from "react-icons/ri";
 import { IoMdClose } from "react-icons/io";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+
 
 const Navbar = ({modalopen,loginmodal,searchdrawerevent}) => {
   const [anchorEl1, setAnchorEl1] = useState(null); // State for first menu
@@ -183,10 +185,17 @@ const [productstyletouch,setproductstyletouch]=useState(false)
             alignItems: "center",
             background: "#FFFFFF",
             borderBottom: "1px solid #EBEBEB",
-            paddingX: "20px",
+            '@media (min-width:767px)':{
+            paddingLeft:'30px !important',
+            paddingRight:'50px !important',
+
+            },
           }}
         >
-          <Box className="left">
+          <Box className="left" sx={{
+  fontFamily: 'Albert sans',
+
+          }}>
             <RiMenu2Fill className="left-menuicon"  onClick={(()=>{
               setOpenMenu(!openMenu)
             })}/>
@@ -195,6 +204,8 @@ const [productstyletouch,setproductstyletouch]=useState(false)
               sx={{
                 display: "flex",
                 alignItems: "center",
+  fontFamily: 'Albert sans',
+
               }}
             >
               {/* First Menu */}
@@ -213,25 +224,34 @@ const [productstyletouch,setproductstyletouch]=useState(false)
                     overflow: "hidden",
                     whiteSpace: "nowrap",
                     textOverflow: "ellipsis",
+  fontFamily: 'Albert sans',
+
                     // border:'1px solid black'
                   }}
                 >
                   <ListItemText
                     secondary={options[selectedIndex1]}
-                    sx={{
+                    secondaryTypographyProps={{
+                      fontFamily: 'Albert sans',
                       fontSize: "14px",
+
+                    }}
+                    sx={{
                       // maxWidth: "150px",
                       overflow: "hidden",
                       whiteSpace: "nowrap",
                       textOverflow: "ellipsis",
+
                     // border:'1px solid red'
 
                     }}
                   />
                   <KeyboardArrowDownOutlinedIcon
                     sx={{
-                      color: "black",
-                      fontSize: "18px",
+                      color: "rgb(83, 83, 83)",
+                      // color: "rgb(112, 110, 110)",
+
+                      fontSize: "21px",
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
@@ -248,16 +268,24 @@ const [productstyletouch,setproductstyletouch]=useState(false)
                 sx={{
                 
                  padding:'0',
-                 margin:'0'
+                 margin:'0',
+  fontFamily: 'Albert sans',
+
                 }}
               >
                 {options.map((option, index) => (
                   <MenuItem
+                  sx={{
+                    fontFamily: 'Albert sans',
+
+
+                  }}
                     key={option}
                     disabled={index === 0}
                     selected={index === selectedIndex1}
                     onClick={(event) => handleMenuItemClick1(event, index)}
                   >
+                    
                      {option}
                   </MenuItem>
                 ))}
@@ -282,7 +310,14 @@ const [productstyletouch,setproductstyletouch]=useState(false)
                   }}
                 >
                   <ListItemText
-                    secondary={options2[selectedIndex2]}
+                    secondary={
+                      
+                      options2[selectedIndex2]}
+                    secondaryTypographyProps={{
+                      fontFamily: 'Albert sans',
+                      fontSize: "14px",
+
+                    }}
                     sx={{
                       fontSize: "14px",
                       maxWidth: "150px",
@@ -293,8 +328,9 @@ const [productstyletouch,setproductstyletouch]=useState(false)
                   />
                   <KeyboardArrowDownOutlinedIcon
                     sx={{
-                      color: "black",
-                      fontSize: "18px",
+                      color: "rgb(83, 83, 83)",
+
+                      fontSize: "21px",
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
@@ -312,6 +348,11 @@ const [productstyletouch,setproductstyletouch]=useState(false)
               >
                 {options2.map((option, index) => (
                   <MenuItem
+                  sx={{
+                    fontFamily: 'Albert sans',
+
+
+                  }}
                     key={option}
                     selected={index === selectedIndex2}
                     onClick={(event) => handleMenuItemClick2(event, index)}
