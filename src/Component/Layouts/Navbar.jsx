@@ -381,15 +381,15 @@ const [productstyletouch,setproductstyletouch]=useState(false)
                 display: "flex",
               }}
             >
-              <SearchIcon className="one" sx={{ cursor: "pointer" }} onClick={searchdrawerevent}/>
-              <PersonOutlineOutlinedIcon className="two" sx={{ cursor: "pointer" }} 
+              <SearchIcon className="nav-icon one" sx={{ cursor: "pointer" }} onClick={searchdrawerevent}/>
+              <PersonOutlineOutlinedIcon className="nav-icon two" sx={{ cursor: "pointer" }} 
               
               onClick={(()=>{
                 modalopen()
               })}
               />
               <Badge
-                className="three"
+                className="nav-icon three"
                 badgeContent={4}
                 sx={{
                   '& .MuiBadge-badge': {
@@ -404,7 +404,7 @@ const [productstyletouch,setproductstyletouch]=useState(false)
                 <FavoriteBorderOutlinedIcon />
               </Badge>
               <Badge
-                className="four"
+                className="nav-icon four"
                 badgeContent={4}
                 sx={{
                   '& .MuiBadge-badge': {
@@ -415,7 +415,7 @@ const [productstyletouch,setproductstyletouch]=useState(false)
                   cursor: 'pointer',
                 }}
               >
-                <LocalMallOutlinedIcon />
+                <LocalMallOutlinedIcon className="nav-icon" />
               </Badge>
             </Box>
           </Box>

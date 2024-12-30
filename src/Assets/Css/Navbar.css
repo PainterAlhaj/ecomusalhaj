@@ -31,7 +31,47 @@ display: block;
     .appbar .toolbar .right .two,.appbar .toolbar .right .three{
         display: none;
     }
+  
 }
+@media (max-width:599px) {
+
+    .appbar .toolbar .middle img{
+      
+        width: 100px !important;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin-left: 20px;
+    }
+    .appbar .toolbar .right .all-icons{
+      
+       gap: 10px;
+    }
+   
+    .appbar .toolbar .right .all-icons .nav-icon{
+        font-size: 22px;
+
+    }
+
+
+}
+@media (max-width:400px) {
+
+    .appbar .toolbar .middle img{
+      
+        width: 90px !important;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin-left: 20px;
+    }
+    .appbar .toolbar .right .all-icons .nav-icon{
+        font-size: 20px;
+
+    }
+
+}
+
 
 
 
