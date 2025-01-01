@@ -28,10 +28,13 @@ import SampleHomemenu from './View/SampleHomemenu';
 import LoginModal from './View/LoginModal';
 import SearchDrawer from './View/SearchDrawer';
 import SixSection from './View/SixSection';
+import AddCartDrawer from './View/AddCartDrawer';
+import SmallCardSlider from './View/SmallCardSlider';
 
 const App = () => {
    const [loginmodal,setloginmodal]=useState(false)
    const [opensearchdrawer, setopensearchdrawer] = useState(false);
+
 
 
    const modalopen=(()=>{
@@ -44,6 +47,8 @@ const App = () => {
   return (
    <>
 
+
+{/* <SmallCardSlider/> */}
 {/* <SampleHomemenu/> */}
  <LoginModal loginmodal={loginmodal} setloginmodal={setloginmodal}/>
    <SearchDrawer opensearchdrawer={opensearchdrawer} setopensearchdrawer={setopensearchdrawer}/>
@@ -56,7 +61,7 @@ const App = () => {
    <GridDesign/> 
 
    <CardSlider/>
-   {/* <SixSection/> */}
+   <SixSection/>
 
    
 <ProductSlider/>

@@ -21,13 +21,34 @@
   
   
   }
+
+.product-container .product-title  .product-arrow{
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  /* gap: 2%; */
+  width: 100%;
+ gap: 2%;
+
+
+}
+.product-container .product-title  .product-arrow .arrow-icon{
+  font-size: 14px;
+  margin-top: 20px;
+  cursor: pointer;
+
+}
+
+
   .product-container .product-title .btn{
+    position: relative;
+    padding: 0;
     color:black;
     box-shadow: none;
-    padding: 10px 30px;
     text-transform:unset;
     margin-top: 20px;
-
+    border-bottom: 1px solid #814037;
+    border-radius: 0;
     font-size: 17px;
   }
 .product-container .product-slider .slick-prev, .product-container .product-slider .slick-next {
@@ -82,6 +103,8 @@ position: relative;
 }
 
 
+
+
 .product-container .card .card-img{
   height: 240px;
   width: 100%;
@@ -119,9 +142,50 @@ border-radius: 3px;
 
 
 }
+.product-container .product-slider .card .imagechange {
+  position: relative;
+
+  gap: 10px;
+  display: flex;
+  margin-top: 10%;
+}
+.product-container .product-slider .card .imagechange div {
+  position: relative;
+ 
+  border-radius: 50%;
+  padding: 5px;
+  height: 20px;
+width: 20px;
+}
+
+
+.product-container .product-slider .card .imagechange div.first::before{
+  position: absolute;
+  bottom: 0;
+  content: '';
+  left: 0;
+border-radius: 50%;
+height: 20px;
+width: 20px;
+background: green;
+cursor: pointer;
+
+}
+.product-container .product-slider .card .imagechange div.second::before{
+  position: absolute;
+  bottom: 0;
+left: 0;
+  content: '';
+border-radius: 50%;
+height: 20px;
+width: 20px;
+background: black;
+cursor: pointer;
+}
+
 
 @media (min-width:767px) {
-  .product-container .card:hover .card-img{
+  .product-container .card-img:hover{
     scale: 1.1;
   }
 .product-container .product-slider .card-action{

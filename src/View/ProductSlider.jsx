@@ -1,6 +1,6 @@
 import { Box, Button, Card, CardActions, CardContent, CardMedia } from '@mui/material';
 
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Slider from 'react-slick';
 import product1 from '../Assets/img/image/product1.jpg';
 import product2 from '../Assets/img/image/product2.jpg';
@@ -10,7 +10,20 @@ import product5 from '../Assets/img/image/product5.jpg';
 import product6 from '../Assets/img/image/product6.jpg';
 import product7 from '../Assets/img/image/product7.jpg';
 import product8 from '../Assets/img/image/product8.jpg';
-import { GrFormNext } from "react-icons/gr";
+import productone from '../Assets/img/image/productone.jpg';
+// import producttwo from '../Assets/img/image/producttwo.jpg';
+import productthree from '../Assets/img/image/productthree.jpg';
+import productfour from '../Assets/img/image/productfour.jpg';
+import productfive from '../Assets/img/image/productfive.jpg';
+import productsix from '../Assets/img/image/productsix.jpg';
+import productseven from '../Assets/img/image/productseven.jpg';
+import producteight from '../Assets/img/image/producteight.jpg';
+
+
+
+
+
+import { GrFormNext, GrLinkNext, GrLinkPrevious } from "react-icons/gr";
 import KeyboardArrowLeftOutlinedIcon from '@mui/icons-material/KeyboardArrowLeftOutlined';
 import KeyboardArrowRightOutlinedIcon from '@mui/icons-material/KeyboardArrowRightOutlined';
 import { GrFormPrevious } from "react-icons/gr";
@@ -19,7 +32,7 @@ import { RiShoppingBag2Line } from "react-icons/ri";
 import { MdFavoriteBorder } from "react-icons/md";
 import { IoEyeOutline } from "react-icons/io5";
 
-import { TbArrowsCross } from "react-icons/tb";
+import { TbArrowsCross, TbBackground } from "react-icons/tb";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -48,7 +61,16 @@ const PrevArrow = ({ onClick, isDisabled }) => (
 
 const ProductSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  
+  const [firstover,setfirstover]=useState(false)
+  const [secondover,setsecondover]=useState(false)
+  const [thirdover,setthirdover]=useState(false)
+  const [fourover,setfourover]=useState(false)
+  const [fiveover,setfiveover]=useState(false)
+  const [sixover,setsixover]=useState(false)
+  const [sevenover,setsevenover]=useState(false)
+  const [eightover,seteightover]=useState(false)
+
+
   
     // After the slide changes, update the currentSlide
     const handleAfterChange = (index) => {
@@ -61,19 +83,36 @@ const ProductSlider = () => {
     // }, [currentSlide]);
   
   const allCards = [
-    { id: 1, img: product1, caption:'AJ Wall Sconce',price:'$982.00'},
-    { id: 2, img: product2, caption:'Brasilia Long Chair',price:'$982.00' },
-    { id: 3, img: product3, caption:'Lina Swivel Chair',price:'$3600.00' },
-    { id: 4, img: product4, caption:'MR Chaise',price:'$1999.00' },
-    { id: 5, img: product5,caption:'MG 501 Cuba Lounge Chair,Paper Cord',price:'$1290.00' },
-    { id: 4, img: product6, caption:'Scissor Chair',price:'$2755.00' },
-    { id: 4, img: product7, caption:'Soborg Model 3052 Dinner Chsir',price:'$1356.00' },
-    { id: 4, img: product8, caption:'Lina Swivel Chair',price:'$3600.00' },
+    { id: 1,
+       img: firstover?product1:productone,
+       caption:'AJ Wall Sconce',price:'$982.00',img2:product2},
+    { id: 2,
+      // img: secondover?product2:producttwo,
+      img:product2,
+      caption:'Brasilia Long Chair',price:'$982.00' },
+    { id: 3, 
+      img: thirdover?product3:productthree,
+       caption:'Lina Swivel Chair',price:'$3600.00' },
+    { id: 4,
+       img: fourover?product4:productfour,
+       caption:'MR Chaise',price:'$1999.00' },
+    { id: 5, 
+      img: fiveover?product5:productfive,
+      caption:'MG 501 Cuba Lounge Chair,Paper Cord',price:'$1290.00' },
+    { id: 4,
+       img: sixover?product6:productsix,
+       caption:'Scissor Chair',price:'$2755.00' },
+    { id: 4, 
+      img: sevenover?product7:productseven,
+       caption:'Soborg Model 3052 Dinner Chsir',price:'$1356.00' },
+    { id: 4, 
+      img: eightover?product8:producteight,
+       caption:'Lina Swivel Chair',price:'$3600.00' },
 
   ];
   const totalSlides = 4; 
 
-
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const settings = {
     dots: false,
@@ -89,7 +128,6 @@ const ProductSlider = () => {
       <PrevArrow isDisabled={currentSlide === 0} />
     ),
     afterChange: handleAfterChange,
-
     
     responsive: [
       {
@@ -110,6 +148,16 @@ const ProductSlider = () => {
     ],
   };
 
+  const sliderRef = useRef(null);
+  const nextSlide = () => {
+
+      sliderRef.current.slickNext(); // Index ko increment karne ke liye
+
+  };
+  const prevSlide = () => {
+    sliderRef.current.slickPrev(); // Index ko increment karne ke liye
+  };
+
   return (
     <>
       <Box className="product-container">
@@ -117,15 +165,24 @@ const ProductSlider = () => {
         <Box className="product-slider">
         <div className="product-title">
       <span>Trending Now</span>
+      <div className="product-arrow">
+      <GrLinkPrevious  className='arrow-icon'
+        onClick={prevSlide}
+        />
+
       <Button variant='text' className='btn'>View All</Button>
+      <GrLinkNext   className='arrow-icon' onClick={nextSlide}/>
 
       </div>
-          <Slider {...settings}>
-            {allCards.map((card) => (
-              <Card className="card" key={card.id}>
+      </div>
+          <Slider {...settings}  ref={sliderRef}>
+            {allCards.map((card,index) => (
+              <Card className="card" key={index}>
                 <CardMedia
                   className="card-img"
-                  image={card.img}
+                  image={
+                  card.img
+                  }
                   alt={card.btn}
                 />
                 <CardActions className='card-action'>
@@ -151,6 +208,46 @@ const ProductSlider = () => {
                <CardContent className='card-content'>
                 <a>{card.caption}</a>
                 <span>{card.price}</span>
+<div className="imagechange">
+<div className='first'
+onMouseOver={(()=>{
+  console.log("moiuse over",index)
+  if(index===0){
+    setfirstover(true)
+
+  }
+  if(index===1){
+    setsecondover(true)
+
+  } if(index===2){
+    setthirdover(true)
+
+  } if(index===3){
+    setfourover(true)
+
+  } if(index===4){
+    setfiveover(true)
+
+  } if(index===5){
+    setsixover(true)
+
+  } if(index===6){
+    setsevenover(true)
+
+  }
+  if(index===7){
+    seteightover(true)
+  }
+  
+  
+})}
+></div>
+<div className='second'></div>
+</div>
+
+
+
+
                </CardContent>
               </Card>
             ))}
