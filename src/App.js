@@ -70,7 +70,10 @@ const App = () => {
 
 <Gallery/>
 
-<Footer/>   
+<Footer/>  
+
+
+
 
    </>
   )

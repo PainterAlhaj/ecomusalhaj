@@ -188,16 +188,16 @@ const ProductSlider = () => {
                 <CardActions className='card-action'>
 
 <div className="action-icons">
-<div className="action-icon show">
+<div className="action-icon show one">
   <RiShoppingBag2Line/>
 </div>
-<div className="action-icon hide">
+<div className="action-icon hide two">
   <MdFavoriteBorder />
 </div>
-<div className="action-icon hide">
+<div className="action-icon hide three">
   <TbArrowsCross />
 </div>
-<div className="action-icon show">
+<div className="action-icon show four">
   <IoEyeOutline />
 </div>
 
@@ -208,6 +208,7 @@ const ProductSlider = () => {
                <CardContent className='card-content'>
                 <a>{card.caption}</a>
                 <span>{card.price}</span>
+           
 <div className="imagechange">
 <div className='first'
 onMouseOver={(()=>{
@@ -242,7 +243,40 @@ onMouseOver={(()=>{
   
 })}
 ></div>
-<div className='second'></div>
+<div className='second'
+
+onMouseOver={(()=>{
+  console.log("moiuse over",index)
+  if(index===0){
+    setfirstover(false)
+
+  }
+  if(index===1){
+    setsecondover(false)
+
+  } if(index===2){
+    setthirdover(false)
+
+  } if(index===3){
+    setfourover(false)
+
+  } if(index===4){
+    setfiveover(false)
+
+  } if(index===5){
+    setsixover(false)
+
+  } if(index===6){
+    setsevenover(false)
+
+  }
+  if(index===7){
+    seteightover(false)
+  }
+  
+  
+})}
+></div>
 </div>
 
 

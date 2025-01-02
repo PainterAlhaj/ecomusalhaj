@@ -82,7 +82,7 @@ flex: 1;
 .footerbox1 .same{
   font-size: 15px;
 font-size: 14px;
-
+text-align: left;
   margin-bottom: 0;
 
 
@@ -137,6 +137,7 @@ margin-bottom: 20px;
   border: 1px solid #EBEBEB;
   padding: 10px 10px;
   border-radius: 4px;
+  justify-content: space-between;
 
 }
 
@@ -272,11 +273,20 @@ font-weight: 400;
   width: 90%;
 }
 .accordion-container .accordion-input-box .accordion-btn{
+  display: flex;
+ 
   background: #000;
   border-radius: 4px;
   text-transform:capitalize;
   font-weight: 400;
   box-shadow: none;
   margin-left: auto;
+  font-family: "Albert sans";
 
+}
+@media (max-width:599px) {
+.accordion-container .accordion-input-box .accordion-btn{
+font-size: 13px;
+padding: 0 20px;
+}
 }

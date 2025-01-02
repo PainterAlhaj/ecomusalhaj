@@ -500,7 +500,13 @@ My Wishlist
     <Button variant='contained' className='accordion-btn'>Subscribe <ArrowOutwardRoundedIcon
     sx={{
       ml:"10px",
-      fontSize:'20px'
+      fontSize:'20px',
+    
+      '@media (max-width:599px)':{
+        ml:'5px',
+      fontSize:'16px',
+
+      },
     }}/></Button>
   </Box>
         </AccordionDetails>

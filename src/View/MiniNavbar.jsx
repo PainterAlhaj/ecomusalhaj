@@ -137,10 +137,17 @@ sx={{display:'flex',justifyContent:'center',alignItems:'center',gap:'40px',
 
 <ul className='list-container'>
     <li className='list home'><a href="#" className=' list-text active'>Home
-   <SampleHomemenu/>
+ 
       <MdOutlineKeyboardArrowDown className='arrow-down'/>
-        </a></li>
+        </a>
+        <SampleHomemenu/>
+        </li>
     <li className='list shop'><a className='list-text' href="#">Shop
+  
+      <MdOutlineKeyboardArrowDown  className='arrow-down'/>
+
+
+    </a>
     <div className="shop-menu">
         <div className="shop-container">
           <div className="row-container">
@@ -275,17 +282,14 @@ sx={{display:'flex',justifyContent:'center',alignItems:'center',gap:'40px',
           </div>
           </div>
         </div>
-      </div>
-      <MdOutlineKeyboardArrowDown  className='arrow-down'/>
-
-
-    </a></li>
+      </div></li>
     <li className='list product'><a className='list-text' href="#">Product
-   <SampleMenu/>
 
    <MdOutlineKeyboardArrowDown  className='arrow-down'/>
 
-    </a></li>
+    </a>
+   <SampleMenu/>
+   </li>
 
     <li className='list pages'><a className='list-text' href="#" >Pages
     {/* <Box
@@ -361,7 +365,15 @@ sx={{display:'flex',justifyContent:'center',alignItems:'center',gap:'40px',
 
 
 
-<Box
+
+
+
+
+
+                <MdOutlineKeyboardArrowDown  className='arrow-down'/>
+
+    </a>
+    <Box
                   className="menubox"
                   sx={{
                     position: "absolute",
@@ -401,8 +413,8 @@ sx={{display:'flex',justifyContent:'center',alignItems:'center',gap:'40px',
                           py:'0px',
                           cursor:'pointer',
 
-// border:'1px solid black',
 mb:'3px',
+
                           "&:hover .secondmenubox": {
                             display: "flex",
                           },
@@ -413,7 +425,7 @@ mb:'3px',
                           primaryTypographyProps={{
                             fontSize: "15px",
                             transition:'all 0.3s ease',
-                           
+fontFamily:'Albert sans',
                             // fontWeight: "bold",
                           }}
 
@@ -461,9 +473,12 @@ mb:'3px',
                               }}
                             >
                               {secondminiitems.map((item, index) => (
-                                <ListItem key={index} sx={{ paddingX: "0" }}>
+                                <ListItem key={index} sx={{ paddingX: "0" ,py:'0'}}>
                                   <ListItemText
                                     primary={item.title}
+                                    primaryTypographyProps={{
+                                      fontFamily:'Albert sans',
+                                                                          }}
                                     sx={{
                                       fontSize: "10px",
                                       fontWeight: "bold",
@@ -475,6 +490,7 @@ mb:'3px',
                                         width: "0",
                                         height: "2px",
                                         bgcolor: "#5FCBC4",
+                                        fontFamily:'Albert sans',
 
                                         transition: "width 0.3s ease",
                                       },
@@ -523,9 +539,12 @@ mb:'3px',
                               }}
                             >
                               {thirdminiitems.map((item, index) => (
-                                <ListItem key={index} sx={{ paddingX: "0" }}>
+                                <ListItem key={index} sx={{ paddingX: "0" ,py:'0'}}>
                                   <ListItemText
                                     primary={item.title}
+                                    primaryTypographyProps={{
+                                      fontFamily:'Albert sans',
+                                                                          }}
                                     sx={{
                                       fontSize: "10px",
                                       fontWeight: "bold",
@@ -537,6 +556,7 @@ mb:'3px',
                                         width: "0",
                                         height: "2px",
                                         bgcolor: "#5FCBC4",
+                                        fontFamily:'Albert sans',
 
                                         transition: "width 0.3s ease",
                                       },
@@ -585,9 +605,12 @@ mb:'3px',
                               }}
                             >
                               {fourthminiitems.map((item, index) => (
-                                <ListItem key={index} sx={{ paddingX: "0" }}>
+                                <ListItem key={index} sx={{ paddingX: "0" ,py:'0'}}>
                                   <ListItemText
                                     primary={item.title}
+                                    primaryTypographyProps={{
+fontFamily:'Albert sans',
+                                    }}
                                     sx={{
                                       fontSize: "10px",
                                       fontWeight: "bold",
@@ -599,6 +622,7 @@ mb:'3px',
                                         width: "0",
                                         height: "2px",
                                         bgcolor: "#5FCBC4",
+                                        fontFamily:'Albert sans',
 
                                         transition: "width 0.3s ease",
                                       },
@@ -647,12 +671,17 @@ mb:'3px',
                               }}
                             >
                               {fifthminiitems.map((item, index) => (
-                                <ListItem key={index} sx={{ paddingX: "0" }}>
+                                <ListItem key={index} sx={{ paddingX: "0" ,py:'0'}}>
                                   <ListItemText
                                     primary={item.title}
+                                    primaryTypographyProps={{
+                                      fontFamily:'Albert sans',
+                                                                          }}
                                     sx={{
                                       fontSize: "10px",
                                       fontWeight: "bold",
+fontFamily:'Albert sans',
+
                                       "&::after": {
                                         position: "absolute",
                                         content: "''",
@@ -677,15 +706,13 @@ mb:'3px',
                       </ListItem>
                     ))}
                   </List>
-                </Box>
-
-
-
-
-                <MdOutlineKeyboardArrowDown  className='arrow-down'/>
-
-    </a></li>
+                </Box></li>
     <li className='list blog'><a className='list-text' href="#">Blog
+   
+    {/* <KeyboardArrowDownOutlinedIcon/> */}
+    <MdOutlineKeyboardArrowDown  className='arrow-down'/>
+
+    </a>
     <Box
                   className="menubox"
                   sx={{
@@ -714,7 +741,7 @@ mb:'3px',
                       bgcolor: "white",
                       width: "100%",
                       transition: "all 0.3s ease",
-                      cursor:'default'
+                      cursor:'default',
                     }}
                   >
                     {blogmenu.map((item, index) => (
@@ -732,6 +759,9 @@ mb:'3px',
                             // fontWeight: "bold",
                             cursor:'pointer',
                             transition:'all 0.3s ease',
+                            fontFamily:'Albert sans',
+                      textAlign:'left ',
+
                             '&:hover':{
                               color:'#814037'
                             },
@@ -744,11 +774,7 @@ mb:'3px',
                       // </ListItem>
                     ))}
                   </Box>
-                </Box>
-    {/* <KeyboardArrowDownOutlinedIcon/> */}
-    <MdOutlineKeyboardArrowDown  className='arrow-down'/>
-
-    </a></li>
+                </Box></li>
     <li className='list buynow'><a className='list-text' href="#">Buy Now</a></li>
 
 </ul>

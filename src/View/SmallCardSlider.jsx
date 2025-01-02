@@ -87,7 +87,7 @@ const SmallCardSlider = () => {
 </div>
 <div className="small-card-content">
 <a href="#">{card.title}</a>
-<p><span>{card.oldprice}</span>{card.newprice}</p>
+<p>{card.newprice}</p>
 
 </div>
 <div className="small-card-icon">

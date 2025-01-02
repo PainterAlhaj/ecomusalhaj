@@ -87,7 +87,7 @@ width: 100%;
 }
 .design-container .design-box .img-container .content p{
     font-size: 18px;
-
+text-align: left;
     margin-bottom: 10px;
 }
 .design-container .design-box .img-container .content span{

@@ -228,7 +228,7 @@ const Navbar = ({ modalopen, loginmodal, searchdrawerevent }) => {
             borderBottom: "1px solid #EBEBEB",
             "@media (min-width:767px)": {
               paddingLeft: "30px !important",
-              paddingRight: "50px !important",
+              paddingRight: "30px !important",
             },
           }}
         >
