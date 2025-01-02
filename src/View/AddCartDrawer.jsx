@@ -114,23 +114,55 @@ anchor="right" open={openaddcartdrawer} onClose={()=>{
 
     </div>
     <div className="taxes">
-<p>Taxes and shipping calculated at checkout</p>
+<p>Taxes and <a href='#' style={{color:'black'}}>shipping</a> calculated at checkout</p>
 </div>
     <div className="addcart-agree">
     <FormControlLabel className='agreetext'
+    sx={{
+        display:'flex',
+        alignItems:'center',
+        margin:'0',
+        padding:'0 !important',
+        // border:'1px solid'
+    }}
       control={<Radio 
         sx={{
             transform: "scale(0.9)",
-            color:'#ebebeb' // Increase the size of the checkbox
+            color:'#ebebeb' ,
+            margin:'0',
+            padding:'0'
           }}/>}
-      label="I agree to the Terms and Conditions"
-      sx={{
-        "& .MuiTypography-root": {
-          fontSize: "15px", 
-          fontFamily:'Albert sans',
-          fontWeight:'400'
-        },
-      }}
+      label=
+      
+      {
+        <>
+        <div className="label" style={{
+            display:'flex',
+            flexWrap:'wrap',
+            marginLeft:'10px'
+        }}>
+        <p  className='label-text'
+        style={{ fontSize: "14px", fontFamily: "Albert Sans", fontWeight: "400" ,
+            textAlign:'left',
+margin:'0',
+
+        }}
+        >I agree to the  
+        </p>
+        <a href="#"  style={{ fontSize: "14px", fontFamily: "Albert Sans", fontWeight: "400" ,color:'black',
+       
+          
+        }}> terms and conditions</a>
+        </div>
+        </>
+      }
+    //   sx={{
+    //     "& .MuiTypography-root": {
+    //       fontSize: "15px", 
+    //       fontFamily:'Albert sans',
+    //       fontWeight:'400'
+    //     },
+    //   }}
       
     />
     </div>
@@ -138,7 +170,7 @@ anchor="right" open={openaddcartdrawer} onClose={()=>{
         <Button variant='text' className='btn'
          sx={{
            color:'black',
-           border:'1px solid #ebebeb',
+           border:'1px solid black',
 
         }}>View Cart</Button>
         <Button className='btn'

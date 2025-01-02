@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import "../../Assets/Css/Navbar.css";
 import flag1 from "../../Assets/img/image/flag1.svg";
+import flag2 from "../../Assets/img/image/flag2.svg";
+import flag3 from "../../Assets/img/image/flag3.svg";
+import flag4 from "../../Assets/img/image/flag4.svg";
+
 import card1 from "../../Assets/img/image/card1.jpg";
 
 import Box from "@mui/material/Box";
@@ -44,22 +48,22 @@ const Navbar = ({ modalopen, loginmodal, searchdrawerevent }) => {
     {
       id: "1",
       text: "EUR | Germany",
-      img: { card1 },
+      img: flag1,
     },
     {
       id: "2",
       text: "EUR",
-      img: { card1},
+      img: flag2,
     },
     {
       id: "3",
       text: "USD | United States",
-      img: { card1},
+      img: flag3,
     },
     {
       id: "4",
       text: "VND | Vietnam",
-      img: {card1 },
+      img: flag4,
     },
   ];
   const options = [
@@ -68,7 +72,7 @@ const Navbar = ({ modalopen, loginmodal, searchdrawerevent }) => {
     "USD | United States",
     "VND | Vietnam",
   ];
-  const options2 = ["English", "Hindi", "Gujarati"];
+  const options2 = ["English",'اردو','简体中文','العربية'];
   const alliconimg = [flag1];
   // Handlers for first menu
   const handleClickListItem1 = (event) => {
@@ -265,7 +269,7 @@ const Navbar = ({ modalopen, loginmodal, searchdrawerevent }) => {
                     display: "flex",
                     alignItems: "center",
                     gap: "5px",
-                    maxWidth: "122px",
+                    maxWidth: "120px",
                     overflow: "hidden",
                     whiteSpace: "nowrap",
                     textOverflow: "ellipsis",
@@ -300,7 +304,7 @@ const Navbar = ({ modalopen, loginmodal, searchdrawerevent }) => {
                       }}
                     >
                       <img
-                        src={flag1}
+                        src={options3[selectedIndex1].img}
                         alt=""
                         style={{
                           height: "20px",
@@ -338,27 +342,40 @@ const Navbar = ({ modalopen, loginmodal, searchdrawerevent }) => {
               <Menu
                 disablePortal
                 disableScrollLock
+                
                 id="lock-menu1"
                 anchorEl={anchorEl1}
                 open={Boolean(anchorEl1)}
                 onClose={handleClose1}
+                
                 sx={{
                   padding: "0",
                   margin: "0",
                   fontFamily: "Albert sans",
                 }}
               >
-                {options.map((option, index) => (
-                  <MenuItem
+                {options3.map((option, index) => (
+                  <MenuItem 
                     sx={{
                       fontFamily: "Albert sans",
+                      width:'280px',
                     }}
                     key={option}
-                    disabled={index === 0}
                     selected={index === selectedIndex1}
                     onClick={(event) => handleMenuItemClick1(event, index)}
                   >
-                    {option}
+                    <img src={option.img} alt="" 
+                     style={{
+                      height: "15px",
+                      width: "15px",
+                      // border:'1px solid black'
+                    }}/>
+                    <span
+                    style={{
+                      marginLeft:'10px',
+                      fontSize:'14px',
+                      fontFamily:'Albert sans',
+                    }}>{option.text}</span>
                   </MenuItem>
                 ))}
               </Menu>
@@ -419,6 +436,9 @@ const Navbar = ({ modalopen, loginmodal, searchdrawerevent }) => {
                   <MenuItem
                     sx={{
                       fontFamily: "Albert sans",
+                    paddingX:' 20px',
+                    py:'2px',
+                    fontSize:'14px'
                     }}
                     key={option}
                     selected={index === selectedIndex2}
