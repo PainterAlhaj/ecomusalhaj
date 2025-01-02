@@ -527,10 +527,10 @@ const Navbar = ({ modalopen, loginmodal, searchdrawerevent }) => {
             <div className="footer-icon">
               <Badge
                 className="nav-icon three"
-                badgeContent={4}
+                badgeContent={3}
                 sx={{
                   "& .MuiBadge-badge": {
-                    backgroundColor: "#814037", // Custom color
+                    backgroundColor: "#DB1215", // Custom color
                     color: "white",
                     fontSize: "11px",
                     // Text color inside the badge
@@ -545,10 +545,10 @@ const Navbar = ({ modalopen, loginmodal, searchdrawerevent }) => {
             <div className="footer-icon">
               <Badge
                 className="nav-icon four"
-                badgeContent={4}
+                badgeContent={1}
                 sx={{
                   "& .MuiBadge-badge": {
-                    backgroundColor: "#814037", // Custom color for another badge
+                    backgroundColor: "#DB1215", // Custom color for another badge
                     color: "white",
                     fontSize: "11px",
                   },
@@ -609,7 +609,9 @@ const Navbar = ({ modalopen, loginmodal, searchdrawerevent }) => {
                   }}
                 >
                   Home
-                  <ul
+                 
+                </li>
+                <ul
                     className="drawerlist"
                     style={{ display: `${hometouch ? "block" : "none"}` }}
                   >
@@ -621,16 +623,18 @@ const Navbar = ({ modalopen, loginmodal, searchdrawerevent }) => {
                       );
                     })}
                   </ul>
-                </li>
                 <li
                   className="shop"
                   onClick={() => {
                     setshoptouch(!shoptouch);
                   }}
                 >
-                  {" "}
+              
                   Shop
-                  <ul
+                  
+                </li>
+
+                <ul
                     className="drawerlist"
                     style={{ display: `${shoptouch ? "block" : "none"}` }}
                   >
@@ -709,7 +713,7 @@ const Navbar = ({ modalopen, loginmodal, searchdrawerevent }) => {
                       </a>
                     </li>
                   </ul>
-                </li>
+
                 <li
                   className="products"
                   onClick={() => {
@@ -717,7 +721,9 @@ const Navbar = ({ modalopen, loginmodal, searchdrawerevent }) => {
                   }}
                 >
                   Products
-                  <ul
+                
+                </li>
+                <ul
                     className="drawerlist"
                     style={{ display: `${productstouch ? "block" : "none"}` }}
                   >
@@ -728,7 +734,6 @@ const Navbar = ({ modalopen, loginmodal, searchdrawerevent }) => {
                     <li>Product swatchs</li>
                     <li>Product features</li>
                   </ul>
-                </li>
                 <li
                   className="pages"
                   onClick={() => {
@@ -736,7 +741,9 @@ const Navbar = ({ modalopen, loginmodal, searchdrawerevent }) => {
                   }}
                 >
                   Pages
-                  <ul
+                
+                </li>
+                <ul
                     className="drawerlist"
                     style={{ display: `${pagestouch ? "block" : "none"}` }}
                   >
@@ -748,7 +755,6 @@ const Navbar = ({ modalopen, loginmodal, searchdrawerevent }) => {
                       );
                     })}
                   </ul>
-                </li>
                 <li
                   className="blogs"
                   onClick={() => {
@@ -756,7 +762,9 @@ const Navbar = ({ modalopen, loginmodal, searchdrawerevent }) => {
                   }}
                 >
                   Blogs
-                  <ul
+                
+                </li>
+                <ul
                     className="drawerlist"
                     style={{ display: `${blogstouch ? "block" : "none"}` }}
                   >
@@ -768,7 +776,6 @@ const Navbar = ({ modalopen, loginmodal, searchdrawerevent }) => {
                       );
                     })}
                   </ul>
-                </li>
                 <li>Buy Now</li>
               </ul>
             </div>
