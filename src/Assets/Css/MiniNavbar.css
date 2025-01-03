@@ -85,20 +85,27 @@ transform: scaleX(1); /* Expands on hover */
 .list-container .home .home-menu{
   position: absolute;
     left: 0;
-    width: 100%;
     top: 40px;
+    /* width: 100%; */
+    box-shadow: 0 4px 8px #ebebeb;
+  
     background: white;
   height: calc(100vh - 100px) !important;
-  cursor: url('https://ecomusnext-themesflat.vercel.app/images/products/furniture-1.jpg');
+  /* cursor: url('https://ecomusnext-themesflat.vercel.app/images/products/furniture-1.jpg'); */
   cursor: default;
-
+z-index: 0;
 }
     .list-container .home:hover .home-menu{
       display: block;
 
 
     }
-
+@media (min-height:1023px) {
+  .list-container .home .home-menu{
+    height: auto !important;
+  }
+  
+}
 
 .list-container .pages:hover .menubox{
 display: flex;

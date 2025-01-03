@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../Assets/Css/SampleHomemenu.css'
 import homemenu1 from '../Assets/img/image/homemenu1.jpg'
 import homemenu2 from '../Assets/img/image/homemenu2.jpg'
@@ -19,8 +19,37 @@ import { Button } from '@mui/material'
 
 
 const SampleHomemenu = () => {
+      const [isFixed, setIsFixed] = useState(false);
+      
+        const [lastScrollY, setLastScrollY] = useState(0)
+         const handleScroll = () => {
+            if (window.scrollY > lastScrollY && window.scrollY > 100) {
+              // Scroll down ho raha hai aur 100px se zyada scroll ho gaya hai
+              setIsFixed(false);
+            } else if (window.scrollY < lastScrollY && window.scrollY > 100) {
+              // Scroll up ho raha hai aur 100px se zyada scroll ho gaya hai
+              setIsFixed(true);
+            }
+            setLastScrollY(window.scrollY); // Last scroll position ko update karte hain
+          };
+        
+        useEffect(() => {
+          window.addEventListener('scroll', handleScroll);
+          return () => {
+            window.removeEventListener('scroll', handleScroll);
+          };
+        },  [lastScrollY]);
   return (
-   <div className="home-menu">
+    <div className="home-menu-new-big">
+   <div className="home-menu"
+   style={{
+
+    // position: isFixed ? 'fixed' : 'relative', 
+    // position:'fixed',
+// top:'150px',
+// width:'100%'
+
+   }}>
     <div className="home-menu-container">
 <div className="row">
     <div className="col">
@@ -72,6 +101,7 @@ const SampleHomemenu = () => {
  
 </div>
 
+   </div>
    </div>
   )
 }

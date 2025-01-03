@@ -30,6 +30,7 @@ import SearchDrawer from './View/SearchDrawer';
 import SixSection from './View/SixSection';
 import AddCartDrawer from './View/AddCartDrawer';
 import SmallCardSlider from './View/SmallCardSlider';
+import Marqueeslider from './View/marqueeslider';
 
 const App = () => {
    const [loginmodal,setloginmodal]=useState(false)
@@ -50,10 +51,13 @@ const App = () => {
 
 {/* <SmallCardSlider/> */}
 {/* <SampleHomemenu/> */}
- <LoginModal loginmodal={loginmodal} setloginmodal={setloginmodal}/>
+ 
+
+<Marqueeslider/>
+<LoginModal loginmodal={loginmodal} setloginmodal={setloginmodal}/>
    <SearchDrawer opensearchdrawer={opensearchdrawer} setopensearchdrawer={setopensearchdrawer}/>
 
-   <Navbar modalopen={modalopen} loginmodal={loginmodal}  searchdrawerevent={searchdrawerevent}/>
+   <Navbar modalopen={modalopen} loginmodal={loginmodal}  searchdrawerevent={searchdrawerevent}/> 
    <MiniNavbar/>
 
 <Hero/> 
@@ -71,10 +75,6 @@ const App = () => {
 <Gallery/>
 
 <Footer/>  
-
-
-
-
    </>
   )
 }

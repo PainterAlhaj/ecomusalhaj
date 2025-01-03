@@ -1,5 +1,5 @@
 import { Box, List, ListItem, ListItemText, Typography } from '@mui/material'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
 import '../Assets/Css/MiniNavbar.css'
 import KeyboardArrowRightOutlinedIcon from "@mui/icons-material/KeyboardArrowRightOutlined";
@@ -14,6 +14,9 @@ import SampleHomemenu from './SampleHomemenu';
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 const MiniNavbar = () => {
+  const [isFixed, setIsFixed] = useState(false);
+  
+    const [lastScrollY, setLastScrollY] = useState(0);
 
 const blogmenu=[
   
@@ -125,15 +128,48 @@ const minimenuitems = [
         { id: 1, title: "Electronic-1" },
         { id: 2, title: "Electronic-2" },
       ];
+
+
+ const handleScroll = () => {
+    if (window.scrollY > lastScrollY && window.scrollY > 100) {
+      // Scroll down ho raha hai aur 100px se zyada scroll ho gaya hai
+      setIsFixed(false);
+    } else if (window.scrollY < lastScrollY && window.scrollY > 100) {
+      // Scroll up ho raha hai aur 100px se zyada scroll ho gaya hai
+      setIsFixed(true);
+    }
+    setLastScrollY(window.scrollY); // Last scroll position ko update karte hain
+  };
+
+useEffect(() => {
+  window.addEventListener('scroll', handleScroll);
+  return () => {
+    window.removeEventListener('scroll', handleScroll);
+  };
+},  [lastScrollY]);
+
+
     
   return (
    <>
 
 
 <Box className='mininavbar-container' 
-sx={{display:'flex',justifyContent:'center',alignItems:'center',gap:'40px',
-    paddingY:'20px',position:'relative',
-}}>
+sx={{
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: '40px',
+    paddingY: '20px',
+    position: isFixed ? 'sticky' : 'relative', // Change sticky to fixed
+    width: '100%',
+    bgcolor: 'white',
+    zIndex: 1000, 
+    top:isFixed?'65px':0,
+    boxShadow: isFixed ? ' 0 1px 3px rgba(0, 0, 0, .1)' : 'none',
+  }}
+>
+
 
 <ul className='list-container'>
     <li className='list home'><a href="#" className=' list-text active'>Home

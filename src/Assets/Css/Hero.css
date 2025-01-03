@@ -2,7 +2,7 @@
     /* border: 2px solid black; */
     margin: 0;
     padding: 0;
-    margin-bottom: 60px;
+    /* margin-bottom: 60px; */
     font-family: "Albert sans";
     /* display: flex; */
     overflow-x: hidden;
@@ -100,10 +100,8 @@ align-items: center;
 }
 .hero-section .slider-box .right{
     position: relative;
-    height: 100%;
     flex: 1;
 background: #52504d;
-aspect-ratio: 1/1;
 
 
 }
@@ -114,23 +112,18 @@ aspect-ratio: 1/1;
     
 }
 
-@media (max-width:767px) {
-    .hero-section .main{
-        
-    }
-    .hero-section .right{
 
-    }
-}
 @media (max-width:767px) {
     
     .hero-section .main{
-        flex-direction: column;
-        /* height: calc(100vh - 100px); */
+        /* flex-direction: column-reverse; */
+        flex-direction: column-reverse;
         
     }
     .hero-section .main .left{
-        padding: 60px 0;
+        padding: 45px 0;
+        
+
 
     }
     .hero-section .main .left .content {
@@ -140,6 +133,7 @@ aspect-ratio: 1/1;
     align-items: center;
         width: 100%;
         margin-left: 0;
+
     
     
 }
@@ -172,11 +166,16 @@ text-align:center;
     /* object-fit: fill; */
     /* aspect-ratio: 5/2.5; */
 }
-.hero-section .slider-box .main .right  img{
-    display: flex;
-/* aspect-ratio: 2/1; */
+.hero-section .slider-box .main .right{
+    height: 300px !important;
+}
+.hero-section .slider-box .main .right img  {
+/* object-fit: fill; */
+height: 300px !important;
 
 }
+
+
 }
 @media (max-width:1290px) {
     .hero-section .main .left  .content .title{
@@ -187,6 +186,12 @@ text-align:center;
     line-height: 70px; 
     }
     
+}
+@media (max-width:1150px) {
+    .hero-section .main{
+        /* max-height: calc(100vh - 100px); */
+    
+    }
 }
 @media (max-width:1085px) {
     .hero-section .main .left  .content .title{
@@ -205,6 +210,14 @@ text-align:center;
     line-height: 40px; 
     }
     
+}
+@media (max-width:410px) {
+    .hero-section .main .left{
+        padding: 65px 0;
+        
+
+
+    }
 }
 @media (max-width:380px) {
     .hero-section .main .left  .content {

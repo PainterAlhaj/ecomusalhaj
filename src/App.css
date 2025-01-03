@@ -3,3 +3,21 @@
   padding: 0;
   font-family: 'Albert sans';
 }
+  .marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 50%;
+  }
+  .marquee {
+    animation: scroll 10s linear infinite;
+  }
+  @keyframes scroll {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }

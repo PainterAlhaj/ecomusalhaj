@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../../Assets/Css/Navbar.css";
 import flag1 from "../../Assets/img/image/flag1.svg";
 import flag2 from "../../Assets/img/image/flag2.svg";
@@ -39,10 +39,29 @@ import { MdOutlineFavoriteBorder } from "react-icons/md";
 import { RiShoppingBag2Line } from "react-icons/ri";
 
 const Navbar = ({ modalopen, loginmodal, searchdrawerevent }) => {
+
+
+
+
+
+
+
+
+
+
+
+  const [isFixed, setIsFixed] = useState(false);
+
+  const [lastScrollY, setLastScrollY] = useState(0);
+  
   const [anchorEl1, setAnchorEl1] = useState(null); // State for first menu
   const [anchorEl2, setAnchorEl2] = useState(null); // State for second menu
   const [selectedIndex1, setSelectedIndex1] = useState(1);
   const [selectedIndex2, setSelectedIndex2] = useState(0);
+
+
+  
+  
 
   const options3 = [
     {
@@ -66,12 +85,7 @@ const Navbar = ({ modalopen, loginmodal, searchdrawerevent }) => {
       img: flag4,
     },
   ];
-  const options = [
-    "EUR | Germany",
-    "EUR",
-    "USD | United States",
-    "VND | Vietnam",
-  ];
+
   const options2 = ["English",'اردو','简体中文','العربية'];
   const alliconimg = [flag1];
   // Handlers for first menu
@@ -102,6 +116,14 @@ const Navbar = ({ modalopen, loginmodal, searchdrawerevent }) => {
   const handleClose2 = () => {
     setAnchorEl2(null);
   };
+
+
+  const options = [
+    "EUR | Germany",
+    "EUR",
+    "USD | United States",
+    "VND | Vietnam",
+  ];
 
   const [openaddcartdrawer, setopenaddcartdrawer] = useState(false);
   const addcartdrawerevent = () => {
@@ -212,14 +234,35 @@ const Navbar = ({ modalopen, loginmodal, searchdrawerevent }) => {
     { id: 7, title: "Product Style 07", path: "#" },
   ];
 
+  const handleScroll = () => {
+    if (window.scrollY > lastScrollY && window.scrollY > 100) {
+      // Scroll down ho raha hai aur 100px se zyada scroll ho gaya hai
+      setIsFixed(false);
+    } else if (window.scrollY < lastScrollY && window.scrollY > 100) {
+      // Scroll up ho raha hai aur 100px se zyada scroll ho gaya hai
+      setIsFixed(true);
+    }
+    setLastScrollY(window.scrollY); // Last scroll position ko update karte hain
+  };
+
+useEffect(() => {
+  window.addEventListener('scroll', handleScroll);
+  return () => {
+    window.removeEventListener('scroll', handleScroll);
+  };
+},  [lastScrollY]);
+
+
   return (
     <>
       <AppBar
         className="appbar"
         sx={{
-          position: "relative",
+        position: isFixed ? 'sticky' : 'relative',
           boxShadow: "none",
           background: "#FFFFFF",
+          top:'0',
+          zIndex:'100'
         }}
       >
         <Toolbar
@@ -862,28 +905,69 @@ const Navbar = ({ modalopen, loginmodal, searchdrawerevent }) => {
                     display: "flex",
                     alignItems: "center",
                     gap: "5px",
-                    maxWidth: "85px",
+                    maxWidth: "120px",
                     overflow: "hidden",
                     whiteSpace: "nowrap",
                     textOverflow: "ellipsis",
+                    fontFamily: "Albert sans",
+
                     // border:'1px solid black'
                   }}
                 >
                   <ListItemText
-                    secondary={options[selectedIndex1]}
-                    sx={{
+                    // secondary={options[selectedIndex1]}
+                    secondaryTypographyProps={{
+                      fontFamily: "Albert sans",
                       fontSize: "14px",
+                    }}
+                    sx={{
                       // maxWidth: "150px",
                       overflow: "hidden",
                       whiteSpace: "nowrap",
                       textOverflow: "ellipsis",
+
                       // border:'1px solid red'
                     }}
-                  />
+                  >
+                    <div
+                      className="alhaj-list"
+                      style={{
+                        display: "flex",
+                        fontFamily: "Albert sans",
+                        // border: "1px solid red",
+                        gap: "10px",
+                        alignItems: "center",
+                      }}
+                    >
+                      <img
+                        src={options3[selectedIndex1].img}
+                        alt=""
+                        style={{
+                          height: "20px",
+                          width: "20px",
+                          // border:'1px solid black'
+                        }}
+                      />
+                      <span
+                        style={{
+                          fontSize: "14px",
+                          color: "black",
+                          fontFamily: "Albert sans",
+
+                          // border: "1px solid black",
+                        }}
+                      >
+                        {options3[selectedIndex1].text}
+                      </span>
+                    </div>
+                  </ListItemText>
+
                   <KeyboardArrowDownOutlinedIcon
                     sx={{
-                      color: "black",
-                      fontSize: "18px",
+                      color: "rgb(83, 83, 83)",
+                      // color: "rgb(112, 110, 110)",
+
+                      fontSize: "21px",
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
@@ -894,23 +978,40 @@ const Navbar = ({ modalopen, loginmodal, searchdrawerevent }) => {
               <Menu
                 disablePortal
                 disableScrollLock
+                
                 id="lock-menu1"
                 anchorEl={anchorEl1}
                 open={Boolean(anchorEl1)}
                 onClose={handleClose1}
+                
                 sx={{
                   padding: "0",
                   margin: "0",
+                  fontFamily: "Albert sans",
                 }}
               >
-                {options.map((option, index) => (
-                  <MenuItem
+                {options3.map((option, index) => (
+                  <MenuItem 
+                    sx={{
+                      fontFamily: "Albert sans",
+                      width:'280px',
+                    }}
                     key={option}
-                    disabled={index === 0}
                     selected={index === selectedIndex1}
                     onClick={(event) => handleMenuItemClick1(event, index)}
                   >
-                    {option}
+                    <img src={option.img} alt="" 
+                     style={{
+                      height: "15px",
+                      width: "15px",
+                      // border:'1px solid black'
+                    }}/>
+                    <span
+                    style={{
+                      marginLeft:'10px',
+                      fontSize:'14px',
+                      fontFamily:'Albert sans',
+                    }}>{option.text}</span>
                   </MenuItem>
                 ))}
               </Menu>
@@ -935,6 +1036,10 @@ const Navbar = ({ modalopen, loginmodal, searchdrawerevent }) => {
                 >
                   <ListItemText
                     secondary={options2[selectedIndex2]}
+                    secondaryTypographyProps={{
+                      fontFamily: "Albert sans",
+                      fontSize: "14px",
+                    }}
                     sx={{
                       fontSize: "14px",
                       maxWidth: "150px",
@@ -945,8 +1050,9 @@ const Navbar = ({ modalopen, loginmodal, searchdrawerevent }) => {
                   />
                   <KeyboardArrowDownOutlinedIcon
                     sx={{
-                      color: "black",
-                      fontSize: "18px",
+                      color: "rgb(83, 83, 83)",
+
+                      fontSize: "21px",
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
@@ -964,6 +1070,12 @@ const Navbar = ({ modalopen, loginmodal, searchdrawerevent }) => {
               >
                 {options2.map((option, index) => (
                   <MenuItem
+                    sx={{
+                      fontFamily: "Albert sans",
+                    paddingX:' 20px',
+                    py:'2px',
+                    fontSize:'14px'
+                    }}
                     key={option}
                     selected={index === selectedIndex2}
                     onClick={(event) => handleMenuItemClick2(event, index)}
