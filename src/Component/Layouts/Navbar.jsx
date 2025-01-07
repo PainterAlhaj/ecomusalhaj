@@ -395,6 +395,7 @@ useEffect(() => {
                   padding: "0",
                   margin: "0",
                   fontFamily: "Albert sans",
+                  zIndex:'1000'
                 }}
               >
                 {options3.map((option, index) => (

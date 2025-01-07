@@ -164,7 +164,7 @@ sx={{
     position: isFixed ? 'sticky' : 'relative', // Change sticky to fixed
     width: '100%',
     bgcolor: 'white',
-    zIndex: 1000, 
+    zIndex: 10, 
     top:isFixed?'65px':0,
     boxShadow: isFixed ? ' 0 1px 3px rgba(0, 0, 0, .1)' : 'none',
   }}
